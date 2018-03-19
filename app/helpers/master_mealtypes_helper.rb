@@ -1,0 +1,2 @@
+module MasterMealtypesHelper
+end

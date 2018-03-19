@@ -1,0 +1,2 @@
+module MasterDaysHelper
+end

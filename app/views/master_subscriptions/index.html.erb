@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Subscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_subscriptions.each do |master_subscription| %>
+      <tr>
+        <td><%= link_to 'Show', master_subscription %></td>
+        <td><%= link_to 'Edit', edit_master_subscription_path(master_subscription) %></td>
+        <td><%= link_to 'Destroy', master_subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Subscription', new_master_subscription_path %>

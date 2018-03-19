@@ -1,0 +1,2 @@
+class MasterMealtype < ApplicationRecord
+end

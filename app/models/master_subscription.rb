@@ -1,0 +1,2 @@
+class MasterSubscription < ApplicationRecord
+end
