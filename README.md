@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# Tiffindian
+>>>>>>> 8d58cdea2bf99a8f5e2f856f96012c7eea0bfff5
