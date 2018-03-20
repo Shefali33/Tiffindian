@@ -1,2 +1,0 @@
-class MasterCategory < ApplicationRecord
-end

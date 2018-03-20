@@ -1,2 +1,0 @@
-class MasterSubscription < ApplicationRecord
-end

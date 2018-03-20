@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :master_subscriptions
-  resources :master_days
-  resources :master_mealtypes
-  resources :master_categories
   devise_for :users
   resources :roles
   resources :users
