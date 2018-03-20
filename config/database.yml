@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: Tiff_indian_development
+  database: Indian_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Tiff_indian_test
+  database: Indian_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: Tiff_indian_production
-  username: Tiff_indian
-  password: <%= ENV['TIFF_INDIAN_DATABASE_PASSWORD'] %>
+  database: Indian_production
+  username: Indian
+  password: <%= ENV['INDIAN_DATABASE_PASSWORD'] %>
