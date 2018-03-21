@@ -5,7 +5,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # after_action :set_layout, only: [:create]
 
   # before_action :configure_account_update_params, only: [:update]
-
+  def supplier_new
+  end
   # GET /resource/sign_up
    # def new
    #   super
