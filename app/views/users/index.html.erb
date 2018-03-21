@@ -15,6 +15,10 @@
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if signed_in? %>
+        <td>  <%= link_to('Logout', destroy_user_session_path, method: :delete) %> </td>
+        <% end %>
+        <td>  <%= link_to('Login', new_user_session_path)  %> </td>
       </tr>
     <% end %>
   </tbody>
