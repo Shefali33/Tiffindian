@@ -20,11 +20,8 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div> 
+<%= f.hidden_field :master_role_id, value: '1' %>
 
-<%= f.hidden_field :master_role_id, value: '3' %>
-
-
- 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

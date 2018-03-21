@@ -2,14 +2,17 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
+  # after_action :set_layout, only: [:create]
+
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-   def new
-     super
-       @master_role = MasterRole.find(params[:user][:master_role_id])
-   end
-
+   # def new
+   #   super
+   # end
+  # def new
+  #   super
+  # end
   # POST /resource
   # def create
   #   super
@@ -38,12 +41,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+#  protected
+
+#   def set_layout
+#     @user.update(master_role: selected_layout)
+#   end
+
+#   # This will whitelist the possible options
+#   def selected_layout
+#     ["admin", "Other"].find { |layout_option| layout_option == params[:layout] }
+#   end
+# end
+
 
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  #   # devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :contact_no, :master_role_id])
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
