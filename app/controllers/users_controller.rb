@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @master_role = MasterRole.find(params[:user][:master_role_id])
   end
 
   # GET /users/1/edit
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @master_role = MasterRole.find(params[:user][:master_role_id])
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -63,13 +64,18 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    
     def set_user
       @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
+<<<<<<< HEAD
         params.require(:user).permit(:email, :password, :password_confirmation)
 
+=======
+     params.require(:user).permit(:username, :email, :password, :password_confirmation, :master_role_id)
+>>>>>>> 86194e9bfb0e678b200d7f66131126d1ae11abeb
     end
 end
