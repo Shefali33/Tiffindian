@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     root to: "users#index"
     # get 'users/sign_out', to: "users#destroy", as: "logout"
     # get 'users/sign_out' => 'users#destroy'
-    get '/users/ssignup', to:'users/registrations#supplier_new', as:'new_supplier_signup'
+    get '/users/signup', to:'users/registrations#supplier_new', as:'new_supplier_signup'
 end
