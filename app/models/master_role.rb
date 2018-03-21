@@ -1,3 +1,3 @@
 class MasterRole < ApplicationRecord
-	has_one :user
+	has_one :users
 end
