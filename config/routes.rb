@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root to: "users#index"
     # get 'users/sign_out', to: "users#destroy", as: "logout"
     # get 'users/sign_out' => 'users#destroy'
+
     devise_scope :user do
     get 'users/supplier_signup', to:'users/registrations#supplier_new', as:'new_supplier_signup'
 end

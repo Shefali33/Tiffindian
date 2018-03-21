@@ -6,6 +6,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # before_action :configure_account_update_params, only: [:update]
   def supplier_new
+     build_resource
+    yield resource if block_given?
+    respond_with resource
   end
   # GET /resource/sign_up
    # def new
