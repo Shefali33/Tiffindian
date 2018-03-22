@@ -1,12 +1,12 @@
 <h2>Supplier Sign up</h2>
 <div class="limiter">
   <div class="beg">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'sign'}) do |f| %>
   <%= devise_error_messages! %>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :Name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true, class: 'input100' %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" , class: 'input100' %>
     <span class="focus-input100"></span>
   </div>
 
