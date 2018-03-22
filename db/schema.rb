@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320113643) do
+ActiveRecord::Schema.define(version: 20180322104158) do
 
   create_table "master_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "role_name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180320113643) do
     t.datetime "updated_at", null: false
     t.bigint "master_role_id"
     t.string "name"
-    t.integer "contact_no"
+    t.string "contact_no"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
