@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # after_action :set_layout, only: [:create]
+  # before_action :check_conditions, only: [:create]
 
   # before_action :configure_account_update_params, only: [:update]
   def supplier_new
@@ -18,9 +19,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+  build_resource(sign_up_params)
+    resource.save
+    yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+       respond_with resource, location: after_sign_up_path_for(resource)
+      else
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+      end
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_to do |format|
+      if resource.master_role_id == 2
+      format.html {render :supplier_new}
+    elsif resource.master_role_id ==3
+       format.html {render :new}        
+    end
+  end
+    end
+  end 
+
 
   # GET /resource/edit
   # def edit
@@ -56,9 +81,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 #     ["admin", "Other"].find { |layout_option| layout_option == params[:layout] }
 #   end
 # end
+ # private
+#     def check_conditions
+#       #your conditions
+#     end
+# end
 
 
-  # protected
+   protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -71,12 +101,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+     if resource.master_role_id == 3
+      new_user_session_path# as defined in config/routes.rb
+    elsif resource.master_role_id == 2
+       new_user_path
+    end
+  end
+ 
+    
+
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
-end
+  def after_inactive_sign_up_path_for(resource)
+    scope = Devise::Mapping.find_scope!(resource)
+    router_name = Devise.mappings[scope].router_name
+    context = router_name ? send(router_name) : self
+    context.respond_to?(:root_path) ? context.root_path : "/"
+  end
+  end
+# end
