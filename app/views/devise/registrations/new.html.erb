@@ -3,9 +3,25 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+    <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true %>
+  </div>
+
+<!--  <div class="field">
+    <%= f.label :Contact_Number %><br />
+    <%= f.telephone_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true %>
+  </div> -->
+<!--   <label>Contact Number</label>
+   <input name="contact_no" autocomplete="contact_no" autofocus="autofocus" required="required" type="contact_no" id="contact_no" maxlength="10"> -->
+    <div class="field">
+    <label for="user_Contact_Number">Contact number</label><br />
+    <input autofocus="autofocus" autocomplete="contact_no" required="required" type="tel" name="user[contact_no]" id="user_contact_no" />
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true %>
   </div>
 
   <div class="field">
@@ -13,12 +29,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true %>
   </div> 
 
 <%= f.hidden_field :master_role_id, value: '3' %>

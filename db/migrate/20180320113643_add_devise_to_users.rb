@@ -5,7 +5,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
     change_table :users do |t|
       ## Database authenticatable
       t.references :master_role
-      t.string :name
+      t.string :name  
       t.integer :contact_no
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
