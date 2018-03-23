@@ -125,10 +125,36 @@
 /*    background: black;*/
     border: none;
     cursor: pointer;
-    position: relative;
-    left: 100px;
+/*    position: relative;
+    left: 100px;*/
 }
 .sign{
   width: 350px;
   font-size: 18px;
+}
+.center{
+  text-align: center;
+}
+.p-t-190 {
+    padding-top: 40px;
+    padding-left: 0px;
+}
+.txt1 {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.5;
+}
+.txt2 {
+    font-family: Poppins-Regular;
+    font-size: 18px;
+    text-decoration: none;
+    color: #57b846;
+    line-height: 1.5;
+}
+.txt2:hover{
+  background-color: none;
+}
+.li{
+  list-style-type: none;
 }

@@ -1,49 +1,60 @@
-<h2>Sign up</h2>
+<h2>User Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="limiter">
+  <div class="beg">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'sign'}) do |f| %>
   <%= devise_error_messages! %>
 
-    <div class="field">
+<div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :Name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" , class: 'input100' %>
+    <span class="focus-input100"></span>
   </div>
 
-<!--  <div class="field">
+<div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :Contact_Number %><br />
-    <%= f.telephone_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true %>
-  </div> -->
-<!--   <label>Contact Number</label>
-   <input name="contact_no" autocomplete="contact_no" autofocus="autofocus" required="required" type="contact_no" id="contact_no" maxlength="10"> -->
-    <div class="field">
-    <label for="user_Contact_Number">Contact number</label><br />
-    <input autofocus="autofocus" autocomplete="contact_no" required="required" type="tel" name="user[contact_no]" id="user_contact_no" />
+    <%= f.text_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true, class: 'input100' %>
+    <span class="focus-input100"></span>
   </div>
 
-  <div class="field">
+<div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, class: 'input100' %>
+    <span class="focus-input100"></span>
   </div>
 
-  <div class="field">
+<div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", :required => true %>
+    <%= f.password_field :password, autocomplete: "off", :required => true, class: 'input100' %>
+    <span class="focus-input100"></span>
   </div>
 
-  <div class="field">
+<div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class: 'input100' %>
+    <span class="focus-input100"></span>
   </div> 
 
 <%= f.hidden_field :master_role_id, value: '3' %>
-
-
- 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions center">
+    <%= f.submit "Sign up", class: "but"  %>
+    <ul class="login-more p-t-190">
+    <li class="li">
+      <span class="txt1">
+        Already have an account?
+      </span>
+       <a href="/users/sign_in" class="txt2">Log in</a>
+    </li>
+</ul>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+
+</div>
+
+
+<!--     <div><%= render "devise/shared/links", class: "but" %></div> -->
