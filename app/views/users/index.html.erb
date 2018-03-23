@@ -1,6 +1,87 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="mar" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand page-scroll" href="#page-top"><img src="/assets/1.png" class="logo-img1" title="BoxHunt"  alt="BoxHunt" /><img src=" /assets/2.png" class="logo-img2" title="BoxHunt"  alt="BoxHunt" /></a> </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about" class="page-scroll">About</a></li>
+        <li><a href="#portfolio" class="page-scroll">Gallery</a></li>
+        <li><a href="#team" class="page-scroll">Top Suppliers</a></li>
+        <li><a href="#call-reservation" class="page-scroll">Contact</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+</nav>
+<header id="header">
+  <div class="intro">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="intro-text">
+            <img src="/assets/1.png" title="BoxHunt"  alt="BoxHunt" />
+            <h1>BoxHunt</h1>
+            <h2 class="white-color">Tiffin Services In Ahmedabad</h2>
+            <a href="https://play.google.com/store/apps/details?id=com.boxhunt.customer&hl=en" title="BoxHunt" class="btn btn-custom btn-lg" target="_blank">Download Our Android App</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">SCROLL DOWN</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">Parallax Demo</h3>
+  <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">COOL!</span>
+  </div>
+</div>
+
+</body>
 
 
-<h1>Users</h1>
+
+<!-- <h1>Users</h1>
 
 <table>
   <thead>
@@ -28,3 +109,28 @@
 
 <%= link_to 'New User', new_user_path %>
 <%= link_to 'Supplier Sign_up', new_supplier_signup_path %>
+ -->
+
+
+
+ <script type="text/javascript">
+   $(window).scroll(function() {
+   if ($(this).scrollTop() > 150){
+      $('nav').addClass("on");
+   } else {
+      $('nav').removeClass("on");
+   }
+});
+
+//  $(window).scroll(function() {
+//    if ($(this).scrollTop() > 100){
+//      $('navbar-brand').addClass("");
+//       $('navbar-brand').removeClass("on");
+//    } else {
+//       $('nav').removeClass("on");
+//    }
+// });
+
+
+ 
+ </script>

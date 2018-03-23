@@ -34,7 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
-      clean_up_passwords resource
+      clean_up_passwords resource #condition to redirect to user/supplier sign_ups if error occurs
       set_minimum_password_length
       respond_to do |format|
       if resource.master_role_id == 2
@@ -101,7 +101,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(resource)  #condition to redirect user/supplier after successful sign_up
      if resource.master_role_id == 3
       new_user_session_path# as defined in config/routes.rb
     elsif resource.master_role_id == 2
@@ -113,11 +113,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   # The path used after sign up for inactive accounts.
-  def after_inactive_sign_up_path_for(resource)
-    scope = Devise::Mapping.find_scope!(resource)
-    router_name = Devise.mappings[scope].router_name
-    context = router_name ? send(router_name) : self
-    context.respond_to?(:root_path) ? context.root_path : "/"
-  end
+  # def after_inactive_sign_up_path_for(resource)
+    # super
+  # end
   end
 # end
