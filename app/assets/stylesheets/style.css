@@ -186,6 +186,7 @@ h3 {
 }
 
 .dropdown{
+	cursor: pointer;
 	text-transform: none !important;
 	 position: relative;
     display: inline-block;
@@ -205,6 +206,12 @@ h3 {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+@media only screen and (max-width: 767px) {
+    .dropdown-content {
+        position: relative;
+        box-shadow: none;
+    }
 }
 
 .dropdown-content a {
