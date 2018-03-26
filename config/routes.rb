@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-resources :suppliers
+resources :supplier
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   passwords: 'users/passwords',
   registrations: 'users/registrations'
 }
-
+# get 'users/suppliers', to:'suppliers#index'
 # resources :users do
 #    resources :suppliers
 # end
