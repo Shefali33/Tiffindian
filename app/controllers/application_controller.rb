@@ -23,7 +23,7 @@ def configure_permitted_parameters
      if resource.master_role_id == 3
       users_path# as defined in config/routes.rb
     elsif resource.master_role_id == 2
-       new_user_path
+       suppliers_path
     end
   end
 
