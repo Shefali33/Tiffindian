@@ -6,12 +6,46 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   </head>
 
-  <body style="margin: 0px;">
+  <body class="mar" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"">
+
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand page-scroll" href="#page-top"><img src="/assets/1.png" class="logo-img1" title="Tiffindian"  alt="Tiffindian" /><img src=" /assets/2.png" class="logo-img2" title="Tiffindian"  alt="Tiffindian" /></a> </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about" class="page-scroll">Why Tiffindian?</a></li>
+         <% if !current_user.present?%>
+        <li><a href="#portfolio" class="page-scroll">Gallery</a></li>
+        <% end %>
+        <li><a href="#team" class="page-scroll">Top Suppliers</a></li>
+        <li><a href="#call-reservation" class="page-scroll">Contact</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+    
+</nav>
 <!--   	  <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
  -->
     <%= yield %>
   </body>
 </html>
+
+
+<script>
+   $(window).scroll(function() {
+   if ($(this).scrollTop() > 50){
+      $('nav').addClass("on");
+   } else {
+      $('nav').removeClass("on");
+   }
+});
+</script>
