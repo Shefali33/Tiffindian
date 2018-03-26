@@ -21,7 +21,7 @@ def configure_permitted_parameters
    private #condition after log_in of supplier and customer
    def after_sign_in_path_for(resource)
      if resource.master_role_id == 3
-      new_user_session_path# as defined in config/routes.rb
+      users_path# as defined in config/routes.rb
     elsif resource.master_role_id == 2
        new_user_path
     end
