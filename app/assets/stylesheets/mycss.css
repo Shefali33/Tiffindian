@@ -94,6 +94,7 @@
 .limiter{
       width: 100%;
     margin: 0 auto;
+
 }
 .beg{
       width: 100%;
@@ -265,4 +266,8 @@ background-color: transparent;
   height: 550px;
   width: 550px;
   padding-top: 60px;
+}
+
+.top1{
+  margin-top: 90px;
 }
