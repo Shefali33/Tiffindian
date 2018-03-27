@@ -1,0 +1,2 @@
+class MasterDay < ApplicationRecord
+end

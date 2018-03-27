@@ -1,0 +1,2 @@
+class MasterSlot < ApplicationRecord
+end

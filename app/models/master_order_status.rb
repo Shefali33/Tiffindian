@@ -1,0 +1,2 @@
+class MasterOrderStatus < ApplicationRecord
+end
