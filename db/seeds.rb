@@ -18,9 +18,9 @@ MasterSubscription.create([{ id: 1, subscription: 'standard'}, { id: 2, subscrip
 MasterDay.create([{ id: 1, days: 'monday'}, { id: 2, days: 'tuesday'}, { id: 3, days: 'wednesday'},
 	 { id: 4, days: 'thrusday'}, { id: 5, days: 'friday'}])
 
-MasterSlot.create([{ id: 1, master_meal_id: 1, start_time: "7:00" "%H:%M" , end_time: "10:00" "%H:%M" },
-					{ id: 2, master_meal_id: 2, start_time: "12:00" "%H:%M" , end_time: "15:00" "%H:%M" },
-					{ id: 3, master_meal_id: 3, start_time: "19:00" "%H:%M" , end_time: "22:00" "%H:%M" }])
+MasterSlot.create([{ id: 1, master_meal_id: 1, :start_time => Time.strptime("7:00", "%H:%M") , :end_time => Time.strptime("10:00", "%H:%M") },
+					{ id: 2, master_meal_id: 2, :start_time => Time.strptime("12:00", "%H:%M") , :end_time => Time.strptime("15:00", "%H:%M") },
+					{ id: 3, master_meal_id: 3, :start_time => Time.strptime("19:00", "%H:%M") , :end_time => Time.strptime("22:00", "%H:%M") }])
 
 MasterOrderType.create([{ id: 1, order_type: 'membership_order' },
 						{id: 2, order_type: 'normal_order'}])

@@ -1,20 +1,20 @@
 <div class="container pad top1">
     <div class="pad col-lg-6 col-md-6 col-sm-6 hidden-xs">
-      <img src="/assets/tap.jpg" class="img-responsive top">
+      <img src="/assets/tiii.jpg" class="img-responsive top">
     </div>
 
   <div class="pad hei col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="lo-form">
       <span class="log-form-title">Account Login</span>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'new_sessions'}) do |f| %>
 
     <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Name", class: "ik" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "ik", :id => "email" %>
   </div>
 
     <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "ik" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "ik", :id => "password" %>
   </div>
 
 
@@ -35,3 +35,23 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#new_sessions').validate({
+
+    });
+    $( "#email" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Email is mandatory"
+  }
+  });
+    $( "#password" ).rules( "add", {
+  required: true,
+  messages: {
+    required: "*Password is required",
+  
+  }
+  });
+  });
+</script>

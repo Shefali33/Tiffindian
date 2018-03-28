@@ -259,15 +259,17 @@ color: black;
 background-color: transparent; 
 }
 .hei{
-  background-color: brown;
-  height: 550px;
+  height: 567px;
 }
 .top{
-  height: 550px;
-  width: 550px;
-  padding-top: 60px;
+  height: 567px;
+  width: 585px;
 }
 
 .top1{
   margin-top: 90px;
+}
+.error{
+  color: red;
+  
 }
