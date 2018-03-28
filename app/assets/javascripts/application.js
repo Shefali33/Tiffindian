@@ -11,6 +11,8 @@
 // about supported directives.
 //= require jquery
 //= require jquery-ui/widgets/datepicker
+//= require jquery.validate
+//= require jquery.validate.localization/messages_es
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

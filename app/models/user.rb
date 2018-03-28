@@ -8,9 +8,10 @@ class User < ApplicationRecord
   belongs_to :master_category
   validates :contact_no,:presence => true,
                  :numericality => true,
-                 :length => { :minimum => 10, :maximum => 15 } 
-   # validates :name,
-   # 				:length => { :maximum => 20 }  # attr_accessor :master_role_id
+                 :length => { :minimum => 10, :maximum => 12 } 
+   validates :name, format: { with: /\A[a-zA-Z]+\z/,
+    message: "only allows letters" },
+   				:length => { :minimum => 4, :maximum => 20 }  # attr_accessor :master_role_id
    # has_many :suppliers, :class_name => "User",
    #  :foreign_key => "master_role_id"
   # belongs_to :, :class_name => "User",
