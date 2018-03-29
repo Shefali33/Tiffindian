@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :master_role
+  has_many :menu
+  # has_many :suppliers, class_name: "User", foreign_key: "master_role_id"
   # belongs_to :master_meal
   # belongs_to :master_category
   validates :contact_no,:presence => true,
@@ -16,4 +18,6 @@ class User < ApplicationRecord
    #  :foreign_key => "master_role_id"
   # belongs_to :, :class_name => "User",
   #   :foreign_key => "master_role_id"
+
+ 
  end

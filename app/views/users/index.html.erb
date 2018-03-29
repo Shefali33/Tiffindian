@@ -29,10 +29,13 @@
  <%end%>
 </div>
 <div class="col-lg-3 col-sm-3">
-   <%= collection_radio_buttons(:user, :master_meal_id, MasterMeal.all, :id , :meals_type)%>
+     <%= collection_radio_buttons(:menu, :master_meal_id, MasterMeal.all, :id , :meals_type) do |b|%>
+     <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box") + b.text } %>
+     <%end%>
+     <%= @user.menu.master_meal_id%>
   </div>
 <div class="col-lg-2 col-sm-2">
-   <%= collection_radio_buttons(:user, :master_category, MasterCategory.all, :id , :category)%>
+   <%= collection_radio_buttons(:menu, :master_category_id, MasterCategory.all, :id , :category)%>
   </div>
   <div class="col-lg-2 col-sm-2">
    <%= number_field_tag 'quantity','1', min: 1, max: 50, step: 1%>
@@ -101,6 +104,7 @@
 
 <br>
 
+<%byebug%>
 <%= link_to 'New User', new_user_path %>
 <%= link_to 'Supplier Sign_up', new_supplier_signup_path %>
 
@@ -108,6 +112,14 @@
   $( function() {
     $( ".datepicker" ).datepicker();
   } );
+
+
+      $('.radio_box').on('change',function(){
+        var a = $(this).val();
+  
+   
+});
+
   </script>
 
  <!-- <script type="text/javascript">

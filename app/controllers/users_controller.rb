@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @users = User.all
      respond_to do |format|
       format.html { render :layout => 'home' }
+      
     end
   end
 
