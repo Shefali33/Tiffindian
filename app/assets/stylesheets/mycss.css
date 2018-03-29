@@ -207,20 +207,24 @@
     margin-bottom: 20px;
 }
 .ik{
-   width: 100%;
+  width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 2px solid lightsteelblue;
     box-sizing: border-box;
 }
+.ik:focus 
+ {
+     border:0 solid #00c;
+     background-color: snow;
+  }
 .pad{
   padding-right: 0px;
   padding-left: 0px;
 }
 .sig{
   width: 100%;
-  margin-top: 20px;
     font-family: Poppins-Medium;
     font-size: 18px;
     color: #5557E5;
@@ -250,7 +254,7 @@ background-color: transparent;
   float: right;
   margin-top: 20px;
   text-transform: uppercase;
-  color: green;
+  color: #337ab7;
   font-size: 16px;
 }
 .down:hover{
@@ -262,6 +266,7 @@ background-color: transparent;
   height: 567px;
 }
 .top{
+  opacity: 0.7;
   height: 567px;
   width: 585px;
 }
@@ -269,5 +274,12 @@ background-color: transparent;
 
 .error{
   color: red;
-  
+
+}
+.z-i{
+  background-color: black;
+}
+.aut{
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
