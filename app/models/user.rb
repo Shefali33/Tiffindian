@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :master_role
-  belongs_to :master_meal
-  belongs_to :master_category
+  has_many :menu
+  # has_many :suppliers, class_name: "User", foreign_key: "master_role_id"
+  # belongs_to :master_meal
+  # belongs_to :master_category
   validates :contact_no,:presence => true,
                  :numericality => true,
                  :length => { :minimum => 10, :maximum => 12 } 
