@@ -83,11 +83,17 @@
 #menu.navbar-default .navbar-nav > li > a:hover {
 	color: #f5f5f5;
 }
-
+.navbar{
+	margin-bottom: 0 !important;
+}
 .on {
 	background-color: #4baf4f !important;
 	padding: 0 !important;
-	padding: 10px 10px 0 !important;
+	padding: 10px 10px 20px 20px !important;
+	transition: 0.8s;
+}
+.page-scroll{
+	padding: 10px 10px 10px 0 !important;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #ffffff !important;
@@ -108,6 +114,7 @@
 	display:none;
 }
 .on .navbar-brand > img.logo-img2 {
+
 	display:inline-block;
 }
 .on .navbar-brand > img.logo-img1 {
@@ -237,4 +244,24 @@ h3 {
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+.navi{
+   position: sticky;
+   top: 0;
+   z-index: 100;
+}
+
+
+.foo{
+	height: auto;
+   position:relative;
+   color: white;
+   background:black; /* For browsers that do not support gradients */
+   bottom: 0;
+   padding: 20px 0 20px 0;
+}
+.wrapper{
+	margin: 0;
+	padding: 0;
 }
