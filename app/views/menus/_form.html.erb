@@ -1,0 +1,24 @@
+<%= form_with(model: menu, local: true) do |form| %>
+  <% if menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div style="padding-top: 100px;">
+  <%= form.label :Menu %><br />
+    <%= form.text_field :menu, autofocus: true, autocomplete: "name", :required => true %><br />
+     <%= form.label :Price %><br />
+    <%= form.text_field :price, autofocus: true, autocomplete: "name", :required => true %>
+  </div>
+<%= form.hidden_field :user_id, value: current_user.id %>
+<%= form.hidden_field :master_category_id, value: @category.id %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
