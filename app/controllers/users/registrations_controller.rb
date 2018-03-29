@@ -21,7 +21,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
   build_resource(sign_up_params)
-  byebug
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -106,7 +105,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      if resource.master_role_id == 3
       new_user_session_path# as defined in config/routes.rb
     elsif resource.master_role_id == 2
-       new_user_path
+       new_menu_path
     end
   end
  

@@ -18,5 +18,6 @@ resources :supplier
   get 'users/supplier_signup', to:'users/registrations#supplier_new', as:'new_supplier_signup'
   end
   resources :users
+  resources :menus
 
 end
