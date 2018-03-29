@@ -1,5 +1,5 @@
 <div class="container pad top1">
-    <div class="pad col-lg-6 col-md-6 col-sm-6 hidden-xs">
+    <div class="pad z-i col-lg-6 col-md-6 col-sm-6 hidden-xs">
       <img src="/assets/tiii.jpg" class="img-responsive top">
     </div>
 
@@ -17,11 +17,11 @@
     <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "ik", :id => "password" %>
   </div>
 
-
+<div class="pad aut col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <% if devise_mapping.rememberable? -%>
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
-  <% end -%>
+  <% end -%></div>
   <div class="actions" >
     <%= f.submit "Sign In", class: "sig" %>
   </div>

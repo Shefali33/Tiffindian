@@ -1,44 +1,46 @@
-<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
 <div class="top1">
 <span class="logo"><i class="glyphicon glyphicon-user "></i></span>
 <div class="user">User Sign up</div>
 <div class="limiter">
   <div class="beg">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'sign'}) do |f| %>
-<%= devise_error_messages! %>
+
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :Name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true , class: 'input100' %>
+    <%= f.label :Name %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true , class: 'input100', :id => "name" %>
     <span class="focus-input100"></span>
+    <p class='error'><%= show_errors(@user, :name) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :Contact_Number %><br />
-    <%= f.text_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true, class: 'input100' %>
+    <%= f.label :Contact_Number %>
+    <%= f.text_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true, class: 'input100', :id => "contact_number" %>
     <span class="focus-input100"></span>
+    <p class='error'><%= show_errors(@user, :contact_no) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, class: 'input100' %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, class: 'input100', :id => "email" %>
     <span class="focus-input100"></span>
+    <p class='error'><%= show_errors(@user, :email) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :password %>
-    <% if @minimum_password_length %>
+  <!--   <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", :required => true, class: 'input100' %>
+    <% end %> -->
+    <%= f.password_field :password, autocomplete: "off", :required => true, class: 'input100', :id => "password" %>
     <span class="focus-input100"></span>
+    <p class='error'><%= show_errors(@user, :password) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class: 'input100' %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class: 'input100', :id => "password_confirmation" %>
     <span class="focus-input100"></span>
+    <p class='error'><%= show_errors(@user, :password_confirmation) %></p>
   </div> 
 
 <%= f.hidden_field :master_role_id, value: '3' %>
@@ -70,3 +72,48 @@ $( ".sign" ).validate({
 });
 </script> -->
 <!--     <div><%= render "devise/shared/links", class: "but" %></div> -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.sign').validate({
+     lang: 'en'
+    });
+     $( "#email" ).rules( "add", {
+  required: true,
+  messages: {
+    required: "*email is required",
+  
+  }
+  });
+    $( "#password" ).rules( "add", {
+  required: true,
+  messages: {
+    required: "*Password is required",
+  
+  }
+  });
+        $( "#name" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Name is mandatory"
+  }
+  });
+            $( "#password" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Password is mandatory"
+  }
+  });
+    $( "#password_confirmation" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Password Confirmation is mandatory"
+  }
+  });
+    $( "#contact_number" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Contact number is mandatory"
+  }
+  });
+  });
+</script>

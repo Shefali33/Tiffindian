@@ -4,38 +4,40 @@
 <div class="limiter">
   <div class="beg">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'sign'}) do |f| %>
-  <%= devise_error_messages! %>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :Name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true , class: 'input100' %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true , class: 'input100', :id => "name" %>
     <span class="focus-input100"></span>
+      <p class='error'><%= show_errors(@user, :name) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :Contact_Number %><br />
-    <%= f.text_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true, class: 'input100' %>
+    <%= f.label :Contact_Number %>
+    <%= f.text_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true, class: 'input100', :id => "contact_number" %>
     <span class="focus-input100"></span>
+        <p class='error'><%= show_errors(@user, :contact_no) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, class: 'input100' %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, class: 'input100', :id => "email" %>
     <span class="focus-input100"></span>
+       <p class='error'><%= show_errors(@user, :email) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
     <%= f.label :password %>
-    <em>(6 characters minimum)</em>
-  <br />
-    <%= f.password_field :password, autocomplete: "off", :required => true, class: 'input100' %>
+       <%= f.password_field :password, autocomplete: "off", :required => true, class: 'input100', :id => "password" %>
     <span class="focus-input100"></span>
+        <p class='error'><%= show_errors(@user, :password) %></p>
   </div>
 
 <div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class: 'input100' %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class: 'input100', :id => "password_confirmation" %>
     <span class="focus-input100"></span>
+        <p class='error'><%= show_errors(@user, :password_confirmation) %></p>
   </div> 
 
 <%= f.hidden_field :master_role_id, value: '2' %>
@@ -58,3 +60,48 @@
 </div>
 </div>
 <!-- <div><%= render "devise/shared/links" %></div> -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.sign').validate({
+
+    });
+    $( "#email" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Email is mandatory"
+  }
+  });
+    $( "#password" ).rules( "add", {
+  required: true,
+  messages: {
+    required: "*Password is required",
+  
+  }
+  });
+        $( "#name" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Name is mandatory"
+  }
+  });
+            $( "#password" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Password is mandatory"
+  }
+  });
+    $( "#password_confirmation" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Password Confirmation is mandatory"
+  }
+  });
+    $( "#contact_number" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Contact number is mandatory"
+  }
+  });
+  });
+</script>
