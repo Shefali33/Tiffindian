@@ -25,6 +25,7 @@
 <!-- Date: <input type="text" id="datepicker"> -->
 <%= form_with(model: @user, local: true) do |f| %>
  <%= f.text_field :Date, class:"datepicker" %>
+ <%= f.hidden_field :master_role_id, value: '2' %>
  <%end%>
 </div>
 <div class="col-lg-3 col-sm-3">
