@@ -15,7 +15,7 @@
 
 .bgimg-1, .bgimg-2, .bgimg-3 {
   position: relative;
-  opacity: 0.65;
+  opacity: 0.9;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -339,4 +339,13 @@ h3 {
 	font-size: 30px;
 	color: #4baf4f;
 	font-weight: bold;
+}
+
+.fooo{
+	color: white;
+	font-size: 20px;
+}
+.fooo:hover{
+	text-decoration: none;
+	color: white;
 }
