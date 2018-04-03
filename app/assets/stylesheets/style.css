@@ -263,8 +263,9 @@ h3 {
 .foo{
 	height: auto;
    position:relative;
+   opacity: 0.6;
    color: white;
-   background:black; /* For browsers that do not support gradients */
+   background:#262626 	; /* For browsers that do not support gradients */
    bottom: 0;
    padding: 20px 0 20px 0;
 }
@@ -342,8 +343,10 @@ h3 {
 }
 
 .fooo{
-	color: white;
+	text-transform: uppercase;
+	color: #E5E4E2;
 	font-size: 20px;
+	text-align: center;
 }
 .fooo:hover{
 	text-decoration: none;
