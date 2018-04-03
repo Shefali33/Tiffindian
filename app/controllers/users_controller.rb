@@ -5,9 +5,13 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-     respond_to do |format|
+      @meals = MasterMeal.all
+      respond_to do |format|
       format.html { render :layout => 'home' }
-      
+       @menus = Menu.all
+       @category = MasterCategory.all
+
+
     end
   end
 
@@ -66,6 +70,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def meals
+    if params[:meal_id] && params[:category_id]
+      @users = Menu.where(master_meal_id: params[:meal_id], master_category_id: params[:category_id]).users.uniq
+  elsif params[:meal_id]
+    debugger
+     @users = MasterMeal.find(params[:meal_id]).users.uniq
+  elsif params[:category_id]
+      @users = MasterCategory.find(params[:category_id]).users.uniq  
+      
+      
+      # == params[:meal_id])
+      
+      respond_to do |format|
+      format.js
+
+    end
+  end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     
@@ -75,6 +98,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-     params.require(:user).permit(:name, :email, :password, :password_confirmation, :master_role_id)
+     params.require(:user).permit(:name, :email, :password, :password_confirmation, :master_role_id, :meal_id)
     end
 end

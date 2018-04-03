@@ -16,6 +16,7 @@ resources :supplier
 # get 'users/sign_out' => 'users#destroy'
   devise_scope :user do
   get 'users/supplier_signup', to:'users/registrations#supplier_new', as:'new_supplier_signup'
+  get '/users/meals', to: 'users#meals'
   end
   resources :users
   resources :menus
