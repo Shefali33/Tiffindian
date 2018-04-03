@@ -121,10 +121,11 @@
 
 
       $('.radio_box').on('change',function(){
+        if ($(this).is(':checked')){
         var a = $(this).val();
         alert(a);
-        var b = $(".radio_box1").val();
-         alert(b);
+        var b = $(".radio_box1:checked").val();
+         // alert(b);
         $.ajax({
         dataType: "script", 
         type: "GET",
@@ -132,6 +133,7 @@
         data: {meal_id : a, category_id : b }
        });
       });
+      
    
 
 
