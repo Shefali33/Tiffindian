@@ -71,7 +71,12 @@ class UsersController < ApplicationController
   end
 
   def menu_create
-    byebug
+    
+    @menu = current_user.menus.create(user_params)
+    if @menu.save
+      redirect_to root_path
+    end
+  end
   def meals
     if params[:meal_id] && params[:category_id]
       @users = Menu.where(master_meal_id: params[:meal_id], master_category_id: params[:category_id]).users.uniq
