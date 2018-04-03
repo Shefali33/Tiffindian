@@ -263,9 +263,9 @@ h3 {
 .foo{
 	height: auto;
    position:relative;
-   opacity: 0.6;
-   color: white;
-   background:#262626 	; /* For browsers that do not support gradients */
+
+   color:  #4baf4f;
+   background:#E5E4E2 	; /* For browsers that do not support gradients */
    bottom: 0;
    padding: 20px 0 20px 0;
 }
@@ -344,7 +344,7 @@ h3 {
 
 .fooo{
 	text-transform: uppercase;
-	color: #E5E4E2;
+	color:  #4baf4f;
 	font-size: 20px;
 	text-align: center;
 }
