@@ -1,8 +1,8 @@
-<head>
+ <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
+<div>
 <header id="header">
   <div class="intro">
     <div class="overlay">
@@ -18,32 +18,43 @@
     </div>
   </div>
 </header>
+</div>
 
-<div style="color: #777;background-color:black;text-align:center;padding:50px 80px;">
+<div class="selection">
+    <% if current_user.present?%>
   <div class="row mar padding">
-    <div class="col-lg-3 col-sm-3">
+   
+    <div class="col-lg-3 col-sm-3" style="text-align: center;">
 <!-- Date: <input type="text" id="datepicker"> -->
 <%= form_with(model: @user, local: true) do |f| %>
+<%= f.label :Date%>
  <%= f.text_field :Date, class:"datepicker" %>
- <%end%>
+  <%end%>
 </div>
-<div class="col-lg-3 col-sm-3">
-   <%= collection_radio_buttons(:user, :master_meal_id, MasterMeal.all, :id , :meals_type)%>
+<div class="col-lg-3 col-sm-3" style="text-align: center;">
+     <%= collection_radio_buttons(:menu, :master_meal_id, @meals, :id , :meals_type) do |b|%>
+     <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box") + b.text }%>
+     <%end%>
+    </div>
+  
+<div class="col-lg-2 col-sm-2" style="text-align: center;">
+   <%= collection_radio_buttons(:menu, :master_category_id, @category, :id , :category) do |b|%>
+    <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box radio_box1") + b.text } %>
+    <%end%>
   </div>
-<div class="col-lg-2 col-sm-2">
-   <%= collection_radio_buttons(:user, :master_category, MasterCategory.all, :id , :category)%>
-  </div>
-  <div class="col-lg-2 col-sm-2">
+  <div class="col-lg-2 col-sm-2" style="text-align: center;">
    <%= number_field_tag 'quantity','1', min: 1, max: 50, step: 1%>
   </div>
+
 </div>
   <!-- <h3 style="text-align:center;">Parallax Demo</h3> -->
-  <!-- <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p> -->
+  <!-- <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante 1augue etiam maecenas, porta porttitor placerat leo.</p> -->
+  <%end%>
 </div>
 
 <div class="bgimg-2">
-  <div class="caption">
-    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
+  <div class="row mar padng">
+    <%= render partial: '/users/meals'%>
   </div>
 </div>
 
@@ -66,15 +77,8 @@
 </div>
 
 <div class="bgimg-1">
-  <div class="caption">
-    <span class="border">COOL!</span>
-  </div>
-</div>
-
-
-
-
- <h1>Users</h1>
+ 
+   <h1>Users</h1>
 
 <table>
   <thead>
@@ -103,10 +107,45 @@
 <%= link_to 'New User', new_user_path %>
 <%= link_to 'Supplier Sign_up', new_supplier_signup_path %>
 
+
+</div>
+
+
+
+
+ 
  <script>
   $( function() {
     $( ".datepicker" ).datepicker();
   } );
+
+
+      $('.radio_box').on('change',function(){
+        var a = $(this).val();
+        alert(a);
+        var b = $(".radio_box1").val();
+         alert(b);
+        $.ajax({
+        dataType: "script", 
+        type: "GET",
+        url: '/users/meals',
+        data: {meal_id : a, category_id : b }
+       });
+      });
+   
+
+
+      //   $(document).on('click', function(){
+      //   var meal = $(this).attr("meal_id")
+      //   $.ajax({
+      //   dataType: "script", 
+      //   type: "GET",
+      //   url: '/meals/' + meal + '/edit',
+      // // var comment = $("div").attr("comment_id")
+      // // $("div").acomment: " + comment )
+      // });
+      // });
+
   </script>
 
  <!-- <script type="text/javascript">

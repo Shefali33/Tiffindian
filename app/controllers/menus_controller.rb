@@ -22,6 +22,7 @@ class MenusController < ApplicationController
     @category = MasterCategory.all
     @meal = MasterMeal.all
     @day = MasterDay.all
+      
   end
 
   # GET /menus/1/edit

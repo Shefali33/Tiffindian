@@ -1,0 +1,25 @@
+ 
+
+  <div  id=rmeals>
+  	<% @users.each do |user| %>
+  <%if user.master_role_id == 2 %>	
+   <div class="sup">
+   <div class="col-sm-4">
+
+   	<div class="thumbnail thumbs">
+   <%= user.name%><br>
+   <%= user.email%>
+  </div>
+   </div>
+   </div>
+
+   <%end%>
+  <% end%>
+</div>
+
+
+<!-- <div style="background-color: red;">	
+<div class="col-sm-4" style="color: white">	
+ <%= @meal %>
+</div>
+</div> -->

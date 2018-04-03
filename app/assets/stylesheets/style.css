@@ -33,7 +33,7 @@
 }
 
 .bgimg-3 {
-  background-image: url("/assets/car3.jpg");
+  background-image: url("/assets/car3.jpeg");
   min-height: 400px;
 }
 
@@ -69,6 +69,10 @@
 	color: #4baf4f;
 	font-weight: 700;
 	letter-spacing: 1px;
+}
+
+.navbar-right{
+	padding-right: 50px;
 }
 #menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
@@ -178,7 +182,7 @@ h3 {
 
 .intro-text {
 	padding-top: 250px;
-	padding-bottom: 200px;
+	padding-bottom: 70px;
 	text-align: center;
 }
 
@@ -264,4 +268,44 @@ h3 {
 .wrapper{
 	margin: 0;
 	padding: 0;
+}
+
+.selection{
+	b/*ackground-image: url("/assets/sel.jpg");
+  min-height: 100%;*/
+	position: relative;
+	background-color: white;
+	
+	font-family: 'Dosis', sans-serif;
+	color: black;
+	text-transform: uppercase;
+	padding:50px 80px;
+	border-radius: 50px;
+	display: table;
+	width: 100%;
+	/*border: 10px solid black;
+	border-radius: 10px;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	
+}
+
+.thumbs{
+	background-color: transparent;
+	border: none;
+	color: white; 
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.fo{
+	font-family: 'Dosis', sans-serif;
+	color: white;
+}
+
+.sup{
+	margin-top: 30px;
+	text-align: center;
 }

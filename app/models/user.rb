@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :master_role
   has_many :menus
+
   accepts_nested_attributes_for :menus
+  has_many :master_meals, through: :menus
+  has_many :master_categorys, through: :menus
+
   # has_many :suppliers, class_name: "User", foreign_key: "master_role_id"
   # belongs_to :master_meal
   # belongs_to :master_category
@@ -19,4 +23,6 @@ class User < ApplicationRecord
    #  :foreign_key => "master_role_id"
   # belongs_to :, :class_name => "User",
   #   :foreign_key => "master_role_id"
+
+
  end
