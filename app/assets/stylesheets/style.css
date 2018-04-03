@@ -33,7 +33,7 @@
 }
 
 .bgimg-3 {
-  background-image: url("/assets/car3.jpeg");
+  background-image: url("/assets/car3.jpg");
   min-height: 400px;
 }
 
@@ -54,13 +54,16 @@
   letter-spacing: 10px;
 }
 
+.clr{
+	background-color: rgba(248, 248, 248, 0) !important;
+}
 #menu {
 	padding: 20px;
 	transition: all 0.8s;
 }
 #menu.navbar-default {
 	/*background-color: rgba(248, 248, 248, 0);*/
-	background-color: red;
+	background-color: slategrey;
 	border-color: rgba(231, 231, 231, 0);
 }
 #menu a.navbar-brand {
@@ -271,18 +274,18 @@ h3 {
 }
 
 .selection{
-	b/*ackground-image: url("/assets/sel.jpg");
+	/*background-image: url("/assets/sel.jpg");
   min-height: 100%;*/
 	position: relative;
-	background-color: white;
-	
+	background-color:white;
+
 	font-family: 'Dosis', sans-serif;
 	color: black;
 	text-transform: uppercase;
 	padding:50px 80px;
-	border-radius: 50px;
 	display: table;
 	width: 100%;
+	letter-spacing:1px;
 	/*border: 10px solid black;
 	border-radius: 10px;*/
 	-webkit-background-size: cover;
@@ -308,4 +311,32 @@ h3 {
 .sup{
 	margin-top: 30px;
 	text-align: center;
+}
+
+#wt{
+	position: relative;
+	background-color: #E5E4E2;
+	opacity: 0.6;
+	font-family: 'Dosis', sans-serif;
+	color: black;
+	
+	display: table;
+	width: 100%;
+	letter-spacing:1px;
+	font-family: 'Dancing Script', cursive;
+	/*border: 10px solid black;
+	border-radius: 10px;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	
+}
+
+.txt{
+	line-height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #4baf4f;
+	font-weight: bold;
 }
