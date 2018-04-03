@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :master_role
-  has_many :menu
+  has_many :menus
+  accepts_nested_attributes_for :menus
   # has_many :suppliers, class_name: "User", foreign_key: "master_role_id"
   # belongs_to :master_meal
   # belongs_to :master_category

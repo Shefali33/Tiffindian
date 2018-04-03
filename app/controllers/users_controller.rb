@@ -65,6 +65,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def menu_create
+    byebug
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     
@@ -74,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-     params.require(:user).permit(:name, :email, :password, :password_confirmation, :master_role_id)
+     params.require(:user).permit(:name, :email, :password, :password_confirmation, :master_role_id, :menus_attributes => [:master_meal_id, :master_category_id, :master_day_id, :price, :menu])
     end
 end

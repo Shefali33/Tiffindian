@@ -9,9 +9,9 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
+//= require rails-ujs
 //= require jquery
 //= require jquery-ui/widgets/datepicker
 //= require jquery.validate
-//= require rails-ujs
-//= require turbolinks
+//= require jquery_nested_form
 //= require_tree .

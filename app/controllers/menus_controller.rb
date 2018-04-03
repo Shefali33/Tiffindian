@@ -14,11 +14,14 @@ class MenusController < ApplicationController
 
   # GET /menus/new
   def new
+  	# @menu = []
+  	# 1.times do
+  	# 	@menu << Menu.new
+  	# end
     @menu = Menu.new
-      @category = MasterCategory.all
-      @meal = MasterMeal.all
-      @day = MasterDay.all
-      byebug
+    @category = MasterCategory.all
+    @meal = MasterMeal.all
+    @day = MasterDay.all
   end
 
   # GET /menus/1/edit
@@ -29,6 +32,9 @@ class MenusController < ApplicationController
   # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
+      #     @category = MasterCategory.all
+      # @meal = MasterMeal.all
+      # @day = MasterDay.all
     # @category = MasterCategory.find(params[:menu][:master_category_id])
 
     respond_to do |format|
