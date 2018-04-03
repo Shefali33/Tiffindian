@@ -10,6 +10,10 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'new_sessions'}) do |f| %>
 
+   <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>  
+  
     <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "ik", :id => "email" %>
   </div>
@@ -28,7 +32,7 @@
   </div>
 <% end %>
 <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-8">
-<%= link_to "Forgot your password?", new_password_path(resource_name), class: "up" %> 
+<a onclick="document.getElementById('id01')" class="up" href="/users/password/new">Forgot your password?</a>
 </div>
   <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-4">
 <%= link_to "Sign up", new_registration_path(resource_name), class: "down" %>
@@ -55,4 +59,16 @@
   }
   });
   });
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>

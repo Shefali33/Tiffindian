@@ -196,6 +196,11 @@
          padding: 150px 30px 30px 30px;
     }
 }
+@media only screen and (max-width: 600px) {
+    .random{
+         padding: 30px;
+    }
+}
 .log-form-title {
     font-family: Poppins-Regular;
     font-size: 20px;
@@ -237,9 +242,9 @@
 }
 .up{
   float: left;
-  color: red;
+  color: #337ab7;
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .up:visted{
@@ -282,4 +287,7 @@ background-color: transparent;
 .aut{
   margin-top: 10px;
   margin-bottom: 12px;
+}
+#flash_alert{
+  color: red;
 }

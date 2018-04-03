@@ -5,11 +5,9 @@
     <%= menu_form.text_field :master_meal_id %>
     <%= menu_form.text_field :master_category_id %>
     <%= menu_form.text_field :master_day_id %>
-    <%= menu_form.text_field :price %>
+    <%= menu_form.number_field :price %>
     <%= menu_form.text_field :menu %>
   <% end %>
-
     <p><%= f.link_to_add "Add a task", :menus %></p>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit"  %>
 <% end %>
-
