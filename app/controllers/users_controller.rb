@@ -76,7 +76,11 @@ class UsersController < ApplicationController
   end
   def meals
   if params[:meal_id] && params[:category_id]
-      @users = Menu.where(master_meal_id: params[:meal_id], master_category_id: params[:category_id]).user_id.uniq
+    @users = []
+  Menu.where(master_meal_id: params[:meal_id], master_category_id: params[:category_id]).each do |menu|
+    @users << menu.user
+  end
+  @users = @users.uniq
   elsif params[:meal_id]
          @users = MasterMeal.find(params[:meal_id]).users.uniq
   elsif params[:category_id]
