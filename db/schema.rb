@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327101650) do
+ActiveRecord::Schema.define(version: 20180406062443) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -104,6 +104,10 @@ ActiveRecord::Schema.define(version: 20180327101650) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["master_role_id"], name: "index_users_on_master_role_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

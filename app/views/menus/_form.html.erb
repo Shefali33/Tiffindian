@@ -1,6 +1,6 @@
-<%= nested_form_for current_user, :url => menu_create_path, method: "POST" do |f| %>
+<%= nested_form_for current_user, :url => menu_create_path, method: "POST", html: {multipart: true} do |f| %>
 
-
+<p><%= image_tag current_user.image.url(:thumb) %></p>
   <%= f.fields_for :menus do |menu_form| %>
     <%= menu_form.text_field :master_meal_id %>
     <%= menu_form.text_field :master_category_id %>
@@ -8,6 +8,6 @@
     <%= menu_form.number_field :price %>
     <%= menu_form.text_field :menu %>
   <% end %>
-    <p><%= f.link_to_add "Add a task", :menus %></p>
+    <p><%= f.link_to_add "Add Menu Here", :menus %></p>
     <%= f.submit "Submit"  %>
 <% end %>
