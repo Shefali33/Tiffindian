@@ -1,45 +1,66 @@
 
-<div class="container pad">
-    <div class="pad z-i col-lg-6 col-md-6 col-sm-6 hidden-xs">
-      <img src="/assets/tiii.jpg" class="img-responsive top">
-    </div>
+  <div class="l1 container-fluid">
+    <div class="l2" style="background-image: url('/assets/r1.jpeg');">
+      <div class="l3">
+          <span class="l5">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
 
-  <div class="pad hei col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div class="lo-form">
-      <span class="log-form-title">Account Login</span>
+<span class="l6 p-d">
+            Login
+</span>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'new_sessions'}) do |f| %>
+ 
+  
+<div class="w1 validate-input" data-validate = "Enter email">
+<input class="i1 out" autofocus="autofocus" autocomplete="email" placeholder="Email" id="email" type="email" value="" name="user[email]" aria-required="true">
+<span class="f1"  data-placeholder="&#x2709;" ></span>
+</div>
+<div class="w1">
+<input class="i1 out" autocomplete="off" placeholder="Password" id="password" type="password" name="user[password]" aria-required="true">
+<span class="f1" data-placeholder="&#x270f;"></span>
+</div>
+
+  <% if devise_mapping.rememberable? -%>
+  <div class="contact100-form-checkbox">
+    <input name="user[remember_me]" type="hidden" value="0">
+    <input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+      <label class="rem" for="user_remember_me">Remember me</label>
+    </div>
+  <% end -%>
 
    <%- flash.each do |name, msg| -%>
     <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-  <%- end -%>  
-  
-    <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "ik", :id => "email" %>
-  </div>
+  <%- end -%> 
 
-    <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "ik", :id => "password" %>
-  </div>
-
-<div class="pad aut col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <% if devise_mapping.rememberable? -%>
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-  <% end -%></div>
-  <div class="actions" >
-    <%= f.submit "Sign In", class: "sig" %>
+          <div class="c5">
+    <%= f.submit "Sign In", class: "l8" %>
   </div>
 <% end %>
-<div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-8">
-<a onclick="document.getElementById('id01')" class="up" href="/users/password/new">Forgot your password?</a>
+
+
+<div class="forg">
+<a class="txt1" onclick="document.getElementById('id01')" href="/users/password/new">Forgot your password?</a></div>
+
+<div class="si">
+<a class="txt1" href="/users/sign_up">Sign up</a>
 </div>
-  <div class="pad col-lg-6 col-md-6 col-sm-6 col-xs-4">
-<%= link_to "Sign up", new_registration_path(resource_name), class: "down" %>
 </div>
 </div>
 </div>
-</div>
+
+<style type="text/css">
+  .error{
+    top: 30px;
+    color: black;
+  }
+  ::placeholder{
+    color: white;
+  };
+</style>
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('#new_sessions').validate({

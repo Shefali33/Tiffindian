@@ -1,65 +1,86 @@
-<div class="random">
-<span class="logo"><i class="glyphicon glyphicon-user "></i></span>
-<div class="user">Supplier Sign up</div>
-<div class="limiter">
-  <div class="beg">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'sign'}) do |f| %>
+<div class="container-fluid" style="background-color: #999999;">
+    <div class="l1">
+    <div class="container-login100">
+      <div class="login100-more" style="opacity:0.6; background-image: url('/assets/t1.jpg');">
+        <!--  <div class="img-title">Welcome to tiffindian,
+          <br />Thank you!
+      </div> -->
+</div>
+      <div class="wrap-login100" >
+<span class="login100-form-title">Supplier sign up</span>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true}, :html => {:class => 'sign'}) do |f| %>
 
-<div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :Name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true , class: 'input100', :id => "name" %>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_Name">Name</label>
+    <input class="input100 out" autofocus="autofocus" autocomplete="name" required="required" id="name" type="text" name="user[name]" aria-required="true">
     <span class="focus-input100"></span>
       <p class='error'><%= show_errors(@user, :name) %></p>
-  </div>
+</div>
 
-<div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :Contact_Number %>
-    <%= f.text_field :contact_no, autofocus: true, autocomplete: "contact_no", :required => true, class: 'input100', :id => "contact_number" %>
-    <span class="focus-input100"></span>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_Contact_Number">Contact number</label>
+    <input class="input100 out" autofocus="autofocus" autocomplete="contact_no" required="required" id="contact_number" type="text" name="user[contact_no]" aria-required="true">
+        <span class="focus-input100"></span>
         <p class='error'><%= show_errors(@user, :contact_no) %></p>
-  </div>
+</div>
 
-<div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, class: 'input100', :id => "email" %>
-    <span class="focus-input100"></span>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_email">Email</label>
+    <input class="input100 out" autofocus="autofocus" autocomplete="email" required="required" id="email" type="email" value="" name="user[email]" aria-required="true">
+     <span class="focus-input100"></span>
        <p class='error'><%= show_errors(@user, :email) %></p>
-  </div>
+</div>
 
-<div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :password %>
-       <%= f.password_field :password, autocomplete: "off", :required => true, class: 'input100', :id => "password" %>
-    <span class="focus-input100"></span>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_password">Password</label>
+       <input class="input100 out" autocomplete="off" required="required" id="password" type="password" name="user[password]" aria-required="true">
+        <span class="focus-input100"></span>
         <p class='error'><%= show_errors(@user, :password) %></p>
-  </div>
+</div>
 
-<div class="wrap-input100 validate-input m-t-85 m-b-35">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class: 'input100', :id => "password_confirmation" %>
-    <span class="focus-input100"></span>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_password_confirmation">Password confirmation</label>
+   <input class="input100 out" autocomplete="off" required="required" id="password_confirmation" type="password" name="user[password_confirmation]" aria-required="true">
+     <span class="focus-input100"></span>
         <p class='error'><%= show_errors(@user, :password_confirmation) %></p>
-  </div> 
+</div>
+
+<!--  <p>
+  <%= f.label :image, "Attach an Image" %><br />
+  <%= f.file_field :image %>
+</p> -->
+
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-new thumbnail" style="width: 200px; height: 150px; background-color: black;">
+    <!-- <img src="/assets/cook.png" alt="..."> -->
+  </div>
+  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div>
+    <span class="btn btn-default btn-file">
+      <span class="fileinput-new">
+        <label for="user_image">Attach an Image</label>
+      </span> 
+      <span class="fileinput-exists">Change</span>
+      <input type="file" name="user[image]" id="user_image">
+      <p class='error'><%= show_errors(@user, :image) %></p>
+    </span>
+    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+
 
 <%= f.hidden_field :master_role_id, value: '2' %>
 
-
- 
-  <div class="actions center">
-    <%= f.submit "Sign up", class: "but"  %>
-        <ul class="p-t-190">
-    <li class="li">
-      <span class="txt1">
+  <div class="actions">
+    <%= f.submit "Sign up" %>
         Already have an account?
-      </span>
-       <a href="/users/sign_in" class="txt2">Log in</a>
-    </li>
-</ul>
-  </div>
+       <a href="/users/sign_in">Log in</a>
 <% end %>
-</div>
-</div>
-</div>
 
+</div>
+</div>
+</div>
+</div>
 <!-- <div><%= render "devise/shared/links" %></div> -->
 
 <script type="text/javascript">
@@ -102,6 +123,12 @@
     required: true,
   messages: {
     required: "*Contact number is mandatory"
+  }
+  });
+        $( "#user_image" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "*Image is mandatory"
   }
   });
   });

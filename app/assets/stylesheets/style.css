@@ -22,10 +22,7 @@
   background-size: cover;
 
 }
-.bgimg-1 {
-  background-image: url("/assets/car1.jpg");
-  min-height: 100%;
-}
+
 
 .bgimg-2 {
   background-image: url("/assets/car2.jpg");
@@ -285,8 +282,13 @@ h3 {
 	font-family: 'Dosis', sans-serif;
 	color: black;
 	text-transform: uppercase;
+<<<<<<< HEAD
 	padding: 30px 0px 50px 0px;
 	/*display: table;*/
+=======
+	padding:50px 10px;
+	display: table;
+>>>>>>> d7a34435c7c2398230b61111e39fc3a243bc9338
 	width: 100%;
 	letter-spacing:1px;
 	/*border: 10px solid black;*/
