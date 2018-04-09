@@ -1,17 +1,16 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
+   
     @users = User.all
-      @meals = MasterMeal.all
-      respond_to do |format|
-      format.html { render :layout => 'home' }
-       @menus = Menu.all
-       @category = MasterCategory.all
-
-
+    @meals = MasterMeal.all
+    @menus = Menu.all
+    @category = MasterCategory.all
+    respond_to do |format|
+    format.html { render :layout => 'home' }
     end
   end
 
@@ -86,11 +85,49 @@ class UsersController < ApplicationController
   elsif params[:category_id]
       @users = MasterCategory.find(params[:category_id]).users.uniq  
       # == params[:meal_id])
-      respond_to do |format|
+      re*spond_to do |format|
       format.js
 
     end
   end
+  end
+
+  def radiomeal
+    @meals = MasterMeal.all
+    d = params[:date]
+    date = d.to_date 
+    if date == Date.today
+    time = Time.now.seconds_since_midnight
+
+    # brks = Time.parse("07:00").seconds_since_midnight
+    # brke = Time.parse("10:00").seconds_since_midnight
+    # lnchs = Time.parse("11:00").seconds_since_midnight
+    # lnche = Time.parse("15:00").seconds_since_midnight
+    # dinrs = Time.parse("19:00").seconds_since_midnight
+    # dinre = Time.parse("22:00").seconds_since_midnight
+     if time.between?(Time.parse("07:00").seconds_since_midnight,Time.parse("10:00").seconds_since_midnight)
+     # @meals = []
+     # MasterMeal.find_all_by_id([2,3]).each do |meal| 
+     # @meals << meal.all
+    # end
+     elsif time.between?( Time.parse("11:00").seconds_since_midnight, Time.parse("18:00").seconds_since_midnight)
+    #    # flash[:notice] = "Post1111111 successfully created"
+        # debugger
+     elsif time.between?(Time.parse("19:00").seconds_since_midnight,Time.parse("22:00").seconds_since_midnight)
+    #   # MasterMeal.where(master_meal_id: params[:meal_id])
+    #debugger
+     # @meals = []
+     # MasterMeal.find_all_by_id([2,3]).each do |meal| 
+     # @meals << meal.all
+     # debugger
+   # end
+     end
+    else
+
+    end
+   respond_to do |format|
+   format.js
+    end
   end
 
   private

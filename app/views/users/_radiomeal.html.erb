@@ -1,0 +1,7 @@
+ <div class="col-lg-4 col-md-4 iradio" style="text-align: center;">
+  <%= collection_radio_buttons(:menu, :master_meal_id, @meals, :id , :meals_type) do |biy|%>
+  <div id="rid<%=biy.object.id%>"> 
+  	<%= biy.label(:"data-value" => biy.value) { biy.radio_button(class:"radio_box radio_box2") + biy.text }%>
+     </div>
+     <%end%>
+   </div>   
