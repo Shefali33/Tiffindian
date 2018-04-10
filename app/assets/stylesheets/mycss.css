@@ -1,5 +1,5 @@
 body{
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
 }
 /*.wrap-input100 {
   width: 100%;
@@ -8,7 +8,7 @@ body{
 }
 
 .i1 {
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 18px;
   color: #555555;
   line-height: 1.2;
@@ -32,7 +32,7 @@ body{
 }
 .but{
   margin-top: 20px;
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
     font-size: 18px;
     color: #5557E5;
     justify-content: center;
@@ -59,13 +59,13 @@ body{
     padding-left: 0px;
 }
 .txt1 {
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
     font-size: 15px;
     color: black;
     line-height: 1.5;
 }
 .txt2 {
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
     font-size: 18px;
 }
 .txt2:hover{
@@ -78,7 +78,7 @@ body{
 }
 .user{
   font-size: 24px;
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   text-align: center;
   font-weight: bolder;
   margin-bottom: 40px; 
@@ -120,7 +120,7 @@ body{
     }
 }
 .log-form-title {
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
     font-size: 20px;
     color: #555555;
     text-transform: uppercase;
@@ -148,7 +148,7 @@ body{
 }
 .sig{
   width: 100%;
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
     font-size: 18px;
     color: #5557E5;
     justify-content: center;
@@ -274,7 +274,7 @@ box-shadow: 3px 3px #B97;
   margin: 0 auto;
 }
 .l6{
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
@@ -294,7 +294,7 @@ box-shadow: 3px 3px #B97;
   margin-bottom: 30px;
 }
 .i1{
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 18px;
   color: #fff;
   line-height: 1.2;
@@ -336,7 +336,7 @@ box-shadow: 3px 3px #B97;
 }
 
 .f1::after {
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 22px;
   color: #fff;
 
@@ -392,7 +392,7 @@ box-shadow: 3px 3px #B97;
 
 
 .label-checkbox100 {
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 13px;
   color: #fff;
   line-height: 1.2;
@@ -405,7 +405,7 @@ box-shadow: 3px 3px #B97;
 
 .label-checkbox100::before {
   content: "\f26b";
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 13px;
   color: transparent;
 
@@ -446,7 +446,7 @@ box-shadow: 3px 3px #B97;
 .l8 {
   background: aliceblue;
   outline: none;
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 16px;
   color: black;
   line-height: 1.2;
@@ -502,13 +502,13 @@ outline: none;
   padding-top: 30px;
 }
 .txt1{
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
     font-size: 17px;
     color:white;
     line-height: 1.5;
 }
 .rem{
-    font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
   color: white;
   font-size: 13px;
   position: absolute;
@@ -578,7 +578,7 @@ outline: none;
 .login100-form-title {
   display: block;
   width: 100%;
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
@@ -588,7 +588,7 @@ outline: none;
   padding-bottom: 20px;
 }
 .label-input100 {
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 16px;
   line-height: 1.2;
   padding-left: 2px;
@@ -607,7 +607,7 @@ outline: none;
   width: 100%;
   height: 45px;
   background: transparent;
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
   font-size: 15px;
   color: #555555;
   line-height: 1.2;
@@ -699,7 +699,7 @@ outline: none;
   min-width: 150px;
   height: 50px;
 /*  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
-*/  font-family: 'Open Sans', sans-serif !important;
+*/font-family: 'Raleway', sans-serif !important;
   font-size: 16px;
   color: black;
   line-height: 1.2;
@@ -711,7 +711,7 @@ outline: none;
 }
 .dis-block{
   text-decoration:none;
-  font-family: 'Open Sans', sans-serif !important;
+font-family: 'Raleway', sans-serif !important;
     font-size: 16px;
     color: #666666;
     line-height: 1.4;

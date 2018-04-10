@@ -1,6 +1,6 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }, html: { method: :put }) do |f| %>
 
 
   <div class="field">
@@ -30,7 +30,20 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
+<!-- 
+<% if @user.master_role_id == 2 %>
 
+<input class="out" type="file" name="user[image]" id="user_image">
+<% end %> -->
+<% if @user.master_role_id == 2 %>
+<p>
+  <% if @user.image.exists? %>
+      <%= image_tag @user.image.url %><br/>
+  <% end %>
+  <%= f.label :image, "Attach a New Image" %><br />
+  <%= f.file_field :image %>
+</p>
+<% end %>
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

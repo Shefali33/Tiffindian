@@ -9,6 +9,7 @@
     @disabled_meals = @meals
     @menus = Menu.all
     @category = MasterCategory.all
+    @disabled_categories = @category
     respond_to do |format|
     format.html { render :layout => 'home' }
     end
@@ -85,12 +86,21 @@
   elsif params[:category_id]
       @users = MasterCategory.find(params[:category_id]).users.uniq  
       # == params[:meal_id])
-      re*spond_to do |format|
+      respond_to do |format|
       format.js
 
     end
   end
   end
+
+def category
+      @category = MasterCategory.all
+      @disabled_categories = []
+
+       respond_to do |format|
+      format.js
+    end
+end
 
   def radiomeal
     @meals = MasterMeal.all
