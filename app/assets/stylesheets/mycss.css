@@ -761,3 +761,10 @@ outline: none;
   font-weight: bold;
   text-transform: capitalize;
 }*/
+.aut{
+  margin-right: auto;
+  margin-left: auto;
+}
+.text-al{
+  text-align: center;
+}
