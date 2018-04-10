@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <!--  <link href="/assets/stylesheet/flat/green.css" rel="stylesheet">
+   <script src="/assets/javascripts/icheck.js"></script> -->
   </head>
  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <body class="mar" id="page-top" data-spy="scroll" data-target=".navbar"">
@@ -51,20 +53,69 @@
 
 
 <footer  class="foo">
-  <div class="row mar pdng">
+ 
+  <div class="row mar pdng" style="margin-bottom: 30px!important;">
   <div class=" col-md-4 col-sm-4 col-xs-12" style="text-align: center;">
-    <a href= "/" class="fooo">ABOUT US
-    <img src="/assets/1.png"></a>
+    <div class="ftr"> About Us</div>
+    <div class="ftr1">SCO-369, Top Floor, Sector 8<br> Panchkula, Haryana 134109
+</div>
+   <!--  <a href= "/" class="fooo">ABOUT US
+    <img src="/assets/1.png"></a> -->
   </div>
   <div class=" col-md-4 col-sm-4 col-xs-12" style="text-align: center;">
-        <a href= "/users/supplier_signup" class="fooo">Supplier Sign_Up
-          <img src="/assets/f1.png"></a>
+    <div><a href= "/users/supplier_signup" style="margin-top: 10px" class="ftr">Register As a Supplier</div>
+      <div><i class="glyphicon glyphicon-facebook"></i>
+          <i class="fa fa-twitter "></i>
+          <i class="fa fa-instagram"></i></div>
+       <!--  <a href= "/users/supplier_signup" class="fooo">Supplier Sign_Up
+          <img src="/assets/f1.png"></a> -->
   </div>
   <div class=" col-md-4 col-sm-4 col-xs-12" style="text-align: center;">
-     <a href= "/" class="fooo">CONTACT US
-      <img style="transform: scaleX(-1);" src="/assets/f3.png"></a>
+    <div class="ftr"> Contact Us</div>
+    <div class="ftr1">Phone:+91 172 4026255<br> Email: info@poplify.com</div>
+    <!--  <a href= "/" class="fooo">CONTACT US
+      <img style="transform: scaleX(-1);" src="/assets/f3.png"></a> -->
   </div>
-  
+  </div>
+   <div class="gallery" >
+    <div class="row mar pdng">   
+     <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img class="img-responsive" id="i1" src="/assets/g1.png">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g12.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g2.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g11.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g3.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g10.jpg" width="100%;">     
+    </div> 
+     <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img class="img-responsive" id="i1" src="/assets/g4.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g9.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g5.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g8.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g6.jpg">       
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 pdng">
+     <img  class="img-responsive" id="i1" src="/assets/g7.jpg" width="100%;">      
+    </div>   
+  </div>
 </div>
 </footer>
 
@@ -99,4 +150,11 @@ function resize() {
               var calculate = wn - ft - h ;
               $(".wrapper").css("min-height",calculate);
 }
+
+$(document).ready(function(){
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat-green',
+    radioClass: 'iradio_flat-green'
+  });
+});
 </script>

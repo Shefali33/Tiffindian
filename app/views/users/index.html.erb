@@ -1,7 +1,6 @@
- <head>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <div>
 <header id="header">
   <div class="intro">
@@ -20,70 +19,93 @@
 </header>
 </div>
 
-<div class="row mar pdng" >
+<div class="row mar pdng">
     <% if current_user.present?%>
   <div class="selection">
-   
-    <div class="col-lg-3 col-sm-3" style="text-align: center;">
+   <div class="overlay2">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="text-align: center;">
 <!-- Date: <input type="text" id="datepicker"> -->
-<%= form_with(model: @user, local: true) do |f| %>
-<%= f.label :Date%>
- <%= f.text_field :Date, class:"datepicker" %>
-  <%end%>
+<!-- <label for="Date"> Date</label> -->
+
+ <i class="glyphicon glyphicon-calendar cal" style="color: white;"></i><input class="datepicker" type="text" name="Date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DD/MM/YY'" placeholder="DD/MM/YY " > 
+ </div>
+<div id="rad">
+  <%= render partial: '/users/radiomeal'%>
 </div>
-<div class="col-lg-3 col-sm-3" style="text-align: center;">
-     <%= collection_radio_buttons(:menu, :master_meal_id, @meals, :id , :meals_type) do |b|%>
-     <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box radio_box2") + b.text }%>
-     <%end%>
-    </div>
-  
-<div class="col-lg-2 col-sm-2" style="text-align: center;">
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 iradio" style="text-align: center;">
    <%= collection_radio_buttons(:menu, :master_category_id, @category, :id , :category) do |b|%>
     <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box radio_box1") + b.text } %>
     <%end%>
   </div>
-  <div class="col-lg-2 col-sm-2" style="text-align: center; colo">
+  <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12" style="text-align: center; colo">
    <%= number_field_tag 'quantity','1', min: 1, max: 50, step: 1%>
   </div>
 
 </div>
-  <!-- <h3 style="text-align:center;">Parallax Demo</h3> -->
-  <!-- <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante 1augue etiam maecenas, porta porttitor placerat leo.</p> -->
-  <%end%>
 </div>
-
-<div class="bgimg-2">
-  <div class="row mar pdng">
-    <%= render partial: '/users/meals'%>
-  </div>
+   <%end%>
 </div>
 
 <div id="wt">
   <div class="row mar pdng">
-   <div class="col-sm-6 mar pdng col-md-2 col-xs-6">
-     <img class="img-responsive" src="/assets/l1.png">
+   <div class=" col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
+     <img class="img-responsive" src="/assets/f11.png">
     </div> 
-    <div class="col-sm-6 mar pdng col-md-2 col-xs-6">
+    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
     <div class="txt">Ghar Ka Khana</div>
     </div> 
-    <div class="col-sm-6 mar pdng col-md-2 col-xs-6">
-     <img class="img-responsive" src="/assets/l2.png">
+    <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng">
+     <img class="img-responsive" src="/assets/f22.png">
    </div>
-    <div class="col-sm-6 mar pdng col-md-2 col-xs-6">
+    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
     <div class="txt">Healthy Food</div>
     </div>  
-   <div class="col-sm-6 mar pdng col-md-2 col-xs-6">
-     <img class="img-responsive" src="/assets/l3.png">
+   <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
+     <img class="img-responsive" src="/assets/f33.png">
    </div> 
-    <div class="col-sm-6 mar pdng col-md-2 col-xs-6">
+    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
+    <div class="txt">Amazing Variety</div>
+    </div> 
+  </div>
+   <div class="row mar pdng">
+   <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng">
+     <img class="img-responsive" src="/assets/f44.png">
+    </div> 
+    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
+    <div class="txt">Ghar Ka Khana</div>
+    </div> 
+    <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng">
+     <img class="img-responsive" src="/assets/f55.png">
+   </div>
+    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
+    <div class="txt">Healthy Food</div>
+    </div>  
+   <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 10px!important;">
+     <img class="img-responsive" src="/assets/f66.png">
+   </div> 
+    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
     <div class="txt">Amazing Variety</div>
     </div> 
   </div>
 </div>
 
-<div class="bgimg-3">
-  
+
+
+<div class="bgimg-2">
+  <!-- <div class="overlay1"> -->
+  <div class="row mar pdng">
+    <%= render partial: '/users/meals'%>
+  </div>
+<!-- </div> -->
 </div>
+
+
+<!-- 
+<div class="bgimg-3">
+  <div class="overlay1">
+    
+  </div> -->
+
 
 <!-- <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
@@ -129,12 +151,34 @@
 
  
  <script>
-  $( function() {
-    $( ".datepicker" ).datepicker();
-  } );
+ $('.datepicker').datepicker({
+    minDate: 0,
+    maxDate: '+1M',
+    showAnim: 'slideDown',
+    dateFormat: 'dd-mm-yy',
+    hideIfNoPrevNext: true 
+})
+ .change(dateChanged)
+    .on('changeDate', dateChanged);
+
+function dateChanged(ev) {
+   var dt = $(this).val();
+  
+   // var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+   // var s = time.split(':');
+   // var seconds = (+s[0]) * 60 * 60 + (+s[1]) * 60 + (+s[2]);
+   // var c =  $(".radio_box2:checked").val(); 
+   // alert(dt);
+    $.ajax({
+        dataType: "script", 
+        type: "GET",
+        url: '/users/radiomeal',
+        data: {date : dt}
+       });
+ }
 
       
-      $('.radio_box').on('change',function(){
+      $('.radio_box').on('ifToggled',function(){
         var a =  $(".radio_box2:checked").val();
         alert(a);
         var b = $(".radio_box1:checked").val();
@@ -146,7 +190,6 @@
         data: {meal_id : a, category_id : b }
        });
       });
-   
  </script>
 
  <!-- <script type="text/javascript">
