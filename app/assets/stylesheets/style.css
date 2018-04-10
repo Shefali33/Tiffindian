@@ -489,3 +489,13 @@ opacity: .6;
 	color: black;
 	font-size: 15px;
 }
+
+.mar_b{
+	margin-bottom: 20px;
+}
+.wei{
+	font-weight: normal !important;
+}
+.cen{
+	text-align: center;
+}

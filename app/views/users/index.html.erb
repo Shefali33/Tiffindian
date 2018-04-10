@@ -178,18 +178,18 @@ function dateChanged(ev) {
  }
 
       
-      $('.radio_box').on('ifToggled',function(){
-        var a =  $(".radio_box2:checked").val();
-        alert(a);
-        var b = $(".radio_box1:checked").val();
-        alert(b);
-        $.ajax({
-        dataType: "script", 
-        type: "GET",
-        url: '/users/meals',
-        data: {meal_id : a, category_id : b }
-       });
-      });
+      // $('.radio_box').on('ifToggled',function(){
+      //   var a =  $(".radio_box2:checked").val();
+      //   alert(a);
+      //   var b = $(".radio_box1:checked").val();
+      //   alert(b);
+      //   $.ajax({
+      //   dataType: "script", 
+      //   type: "GET",
+      //   url: '/users/meals',
+      //   data: {meal_id : a, category_id : b }
+      //  });
+      // });
  </script>
 
  <!-- <script type="text/javascript">

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   belongs_to :master_role
   has_many :menus
 
-    has_attached_file :image, styles: { medium: "900x600#", thumb: "100x100#", disp:"400x350#"}
+    has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100#", disp:"400x350#" }
 
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
