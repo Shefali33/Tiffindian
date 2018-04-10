@@ -1,14 +1,22 @@
- 
+  
 
   <div  id=rmeals>
   	<% @users.each do |user| %>
   <%if user.master_role_id == 2 %>	
    <div class="sup">
-   <div class="col-sm-4">
+   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 20px;" >
 
-   	<div class="thumbnail thumbs">
-   <%= user.name%><br>
-   <%= user.email%>
+   	<div class="thumbnail thumbs mar pdng">
+   <%= image_tag user.image.url(:disp), class: "img-responsive" %>
+   <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
+   <div class="txtt"> <%= user.name%></div>
+   <div class="txtt1"> <%= user.email%> </div>
+   </div>
+   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+   <div><%= link_to 'READ MORE',user, :class=>"cd-popup-trigger"%></div>
+   </div>
+   </div>
   </div>
    </div>
    </div>

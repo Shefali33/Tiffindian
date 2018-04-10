@@ -1,7 +1,5 @@
- <div class="col-lg-4 col-md-4 iradio" style="text-align: center;">
+ <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 iradio" style="text-align: center;">
   <%= collection_radio_buttons(:menu, :master_meal_id, @meals, :id , :meals_type) do |biy|%>
-  <div id="rid<%=biy.object.id%>"> 
-  	<%= biy.label(:"data-value" => biy.value) { biy.radio_button(class:"radio_box radio_box2") + biy.text }%>
-     </div>
+  	<%= biy.label(:"data-value" => biy.value) { biy.radio_button(class:"radio_box radio_box2",disabled: biy.object.check_disabled(@disabled_meals)) + biy.text }%>
      <%end%>
    </div>   

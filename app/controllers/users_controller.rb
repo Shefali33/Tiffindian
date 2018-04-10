@@ -4,9 +4,9 @@
   # GET /users
   # GET /users.json
   def index
-   
     @users = User.all
     @meals = MasterMeal.all
+    @disabled_meals = @meals
     @menus = Menu.all
     @category = MasterCategory.all
     respond_to do |format|
@@ -96,6 +96,7 @@
     @meals = MasterMeal.all
     d = params[:date]
     date = d.to_date 
+    # byebug
     if date == Date.today
     time = Time.now.seconds_since_midnight
 
@@ -105,15 +106,16 @@
     # lnche = Time.parse("15:00").seconds_since_midnight
     # dinrs = Time.parse("19:00").seconds_since_midnight
     # dinre = Time.parse("22:00").seconds_since_midnight
-     if time.between?(Time.parse("07:00").seconds_since_midnight,Time.parse("10:00").seconds_since_midnight)
+     if time.between?(MasterSlot.find(1).start_time.seconds_since_midnight,MasterSlot.find(1).end_time.seconds_since_midnight)
      # @meals = []
      # MasterMeal.find_all_by_id([2,3]).each do |meal| 
      # @meals << meal.all
     # end
-     elsif time.between?( Time.parse("11:00").seconds_since_midnight, Time.parse("18:00").seconds_since_midnight)
+      @disabled_meals = MasterMeal.where(id: 1)
+     elsif time.between?(MasterSlot.find(2).start_time.seconds_since_midnight,MasterSlot.find(2).end_time.seconds_since_midnight)
     #    # flash[:notice] = "Post1111111 successfully created"
-        # debugger
-     elsif time.between?(Time.parse("19:00").seconds_since_midnight,Time.parse("22:00").seconds_since_midnight)
+      @disabled_meals = MasterMeal.where(id: [1,2])
+     elsif time.between?(MasterSlot.find(3).start_time.seconds_since_midnight,MasterSlot.find(3).end_time.seconds_since_midnight)
     #   # MasterMeal.where(master_meal_id: params[:meal_id])
     #debugger
      # @meals = []
@@ -121,9 +123,10 @@
      # @meals << meal.all
      # debugger
    # end
+   @disabled_meals = MasterMeal.all
      end
     else
-
+      @disabled_meals = []
     end
    respond_to do |format|
    format.js

@@ -12,7 +12,6 @@
 //= require rails-ujs
 //= require jquery
 //= require jquery-ui/widgets/datepicker
-//= icheck.js
 //= require jquery.validate
 //= require jquery_nested_form
 //= require_tree .
