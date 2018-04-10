@@ -18,6 +18,7 @@ resources :supplier
   get 'users/supplier_signup', to:'users/registrations#supplier_new', as:'new_supplier_signup'
   get '/users/meals', to: 'users#meals'
   get '/users/radiomeal', to: 'users#radiomeal'
+  get '/users/category', to: 'users#category'
   end
   post '/menu_create', to:'users#menu_create'
   resources :users

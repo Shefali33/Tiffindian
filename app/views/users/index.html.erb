@@ -32,11 +32,9 @@
 <div id="rad">
   <%= render partial: '/users/radiomeal'%>
 </div>
-<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 iradio" style="text-align: center;">
-   <%= collection_radio_buttons(:menu, :master_category_id, @category, :id , :category) do |b|%>
-    <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box radio_box1") + b.text } %>
-    <%end%>
-  </div>
+<div id="cat">
+<%= render partial: '/users/category' %>
+</div>
   <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12" style="text-align: center; colo">
    <%= number_field_tag 'quantity','1', min: 1, max: 50, step: 1%>
   </div>
@@ -48,42 +46,42 @@
 
 <div id="wt">
   <div class="row mar pdng">
-   <div class=" col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
+   <div class=" col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
      <img class="img-responsive" src="/assets/f11.png">
     </div> 
-    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
+    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
     <div class="txt">Ghar Ka Khana</div>
     </div> 
-    <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng">
+    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng">
      <img class="img-responsive" src="/assets/f22.png">
    </div>
-    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
-    <div class="txt">Healthy Food</div>
+    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
+    <div class="txt">Tezz Delivery</div>
     </div>  
-   <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
+   <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
      <img class="img-responsive" src="/assets/f33.png">
    </div> 
-    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
-    <div class="txt">Amazing Variety</div>
+    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
+    <div class="txt">Swasth khana</div>
     </div> 
   </div>
    <div class="row mar pdng">
-   <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng">
+   <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng">
      <img class="img-responsive" src="/assets/f44.png">
     </div> 
-    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
-    <div class="txt">Ghar Ka Khana</div>
+    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
+    <div class="txt">Phone se book kar</div>
     </div> 
-    <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng">
+    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng">
      <img class="img-responsive" src="/assets/f55.png">
    </div>
-    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
-    <div class="txt">Healthy Food</div>
+    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
+    <div class="txt">Big Basket</div>
     </div>  
-   <div class="col-lg-2 col-col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 10px!important;">
+   <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 10px!important;">
      <img class="img-responsive" src="/assets/f66.png">
    </div> 
-    <div class="col-sm-4 mar pdng col-md-2 col-xs-7">
+    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
     <div class="txt">Amazing Variety</div>
     </div> 
   </div>
@@ -173,6 +171,12 @@ function dateChanged(ev) {
         dataType: "script", 
         type: "GET",
         url: '/users/radiomeal',
+        data: {date : dt}
+       });
+    $.ajax({
+        dataType: "script", 
+        type: "GET",
+        url: '/users/category',
         data: {date : dt}
        });
  }
