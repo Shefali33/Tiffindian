@@ -5,6 +5,4 @@ class SupplierController < ApplicationController
 
   end
 
-def edit
-end
 end
