@@ -4,14 +4,15 @@
   	<% @users.each do |user| %>
   <%if user.master_role_id == 2 %>	
    <div class="sup">
-   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 20px;" >
+   <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;" >
 
    	<div class="thumbnail thumbs mar pdng">
-   <%= image_tag user.image.url(:disp), class: "img-responsive" %>
+      
+   <%= link_to (image_tag user.image.url(:disp), class: "img-responsive"),user %>
    <div class="row">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
-   <div class="txtt"> <%= user.name%></div>
-   <div class="txtt1"> <%= user.email%> </div>
+   <div> <%= link_to user.name,user,class: "txtt" %></div>
+   <div> <%= link_to user.email,user,class: "txtt1" %> </div>
    </div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
    <div><%= link_to 'BOOK NOW',user, :class=>"cd-popup-trigger"%></div>
