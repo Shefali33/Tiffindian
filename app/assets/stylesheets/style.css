@@ -510,7 +510,7 @@ opacity: .6;
 }
 .wei{
 	font-weight: normal !important;
-	color: white !important;
+	color: black !important;
 	font-family: 'Raleway', sans-serif !important;
 	font-size: 16px;
 }
@@ -525,25 +525,33 @@ opacity: .6;
 /*.my-image {
    background-image:url(current_user.image_url(mypicture.jpg));
 }*/
-.b::before{
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: black;
-	opacity: .6; 
+.b{
+	
+	background-color: white;
+ 	
 
 
 }
-.m{
-	  width: 500px;
+.m{    width: auto;
   border-radius: 10px;
   overflow: hidden;
   padding: 30px 40px 30px 40px;
-box-shadow: 3px 3px #B97;
-  background: #9152f8;
-  background: -webkit-linear-gradient(top,#450,#a1a1);
+/*box-shadow: 3px 3px #B97;*/
+  background: #d2b09c;
+  /*background:white;*/
+
 }
+.ic{
+ position: absolute;
+   left: 50%;
+   top: 50%; 
+   margin-left: -150px;
+   margin-top: -10px;
+   z-index: 1;
 }
+
+textarea {	
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;	
+width: 88%;}

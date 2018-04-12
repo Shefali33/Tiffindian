@@ -1,70 +1,75 @@
-<div class="b" style="background-image: url(<%= current_user.image.url(:medium) %>">
-<%= nested_form_for current_user, :url => menu_create_path, method: "POST", html: {multipart: true} do |f| %>
-	<div class="container-fluid pdng m" style="padding-top: 30px!important;">
+<div class="b row mar pdng">
+	<div class=" col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
+	<div class=" col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<img src="/assets/1211.png" class="ic">
+	</div>
+	<div class=" col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
+</div>	
+<div class="b row mar pdng">
+	<div class=" col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
+	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-top: 100px;">
+		<%= nested_form_for current_user, :url => menu_create_path, method: "POST", html: {multipart: true} do |f| %>
+		<div class="container-fluid pdng m">
 		<%= f.fields_for :menus do |menu_form| %>
-		<div class="row mar pdng">
-			<div class=" col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<div class="row mar pdng">
-					<div class="col-md-3 fpd">
-						<%= menu_form.label :Category, class: "wei" %>
-					</div>
-					<div class="col-md-9 fpd">
-						<% options = options_from_collection_for_select(@category, 'id', 'category') %>
-						<%= menu_form.select :master_category_id, options %>
-					</div>
-				</div>
-				<div class="row mar pdng">
-					<div class="col-md-3 fpd">
-						<%= menu_form.label :Meal, class: "wei" %>
-					</div>
-					<div class="col-md-9 fpd">
-						<% options = options_from_collection_for_select(@meal, 'id', 'meals_type') %>
-						<%= menu_form.select :master_meal_id, options,{},:class =>'select_2' %>
-					</div>
-				</div>
-			    <div class="row mar pdng">
-					<div class="col-md-3 fpd">
-						<%= menu_form.label :Day, class: "wei" %>
-					</div>
-					<div class="col-md-9 fpd">
-						<% options = options_from_collection_for_select(@day, 'id', 'days') %>
-						<%= menu_form.select :master_day_id, options%>
-					</div>
-				</div>   				
+		<div class="row mar pdng" style="padding-top: 100px!important;">
+			<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-4">
+				<%= menu_form.label :Category, class: "wei" %>
 			</div>
-			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-9">
-				<div class="row mar pdng">
-					<div class="col-lg-3 col-md-3 col-sm-3 pdng col-xs-3">
-						<%= menu_form.label :Menu, class: "wei" %>
-     				</div>
-     				<div class="col-lg-9 col-md-9 col-sm-9 pdng col-xs-9">
-					<%= menu_form.text_area :menu,size: "30x3", :required =>true %>
-					</div>
-   				</div>
-	 			<div class="row mar pdng">
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fpd"> 
-						<%= menu_form.label :Price , class: "wei" %>
-    					<%= menu_form.number_field :price, min: 35 , max:150, step: 5, value: 50 %>
-   					</div>
-    				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 fpd">
-  						<%= menu_form.label :Max_Quantity, class: "wei" %>
-						<%= menu_form.number_field :max_quantity, min:10 , max:50, step: 2, value: 20	 %>
-					</div>
-				</div>
-			</div> 
+			<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-8">
+				<% options = options_from_collection_for_select(@category, 'id', 'category') %>
+				<%= menu_form.select :master_category_id, options %>
+			</div>
+			<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-4">
+				<%= menu_form.label :Meal, class: "wei" %>
+			</div>
+			<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-8">
+				<% options = options_from_collection_for_select(@meal, 'id', 'meals_type') %>
+				<%= menu_form.select :master_meal_id, options %>
+			</div>
+			<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-4">	
+				<%= menu_form.label :Day, class: "wei" %>
+			</div>
+			<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-8">
+				<% options = options_from_collection_for_select(@day, 'id', 'days') %>
+				<%= menu_form.select :master_day_id, options%>
+			</div>
+		</div>  
+		<br> 				
+		<div class="row mar" style="padding-left: 15px!important">
+			<%= menu_form.label :Menu, class: "wei" %>
+     	</div>
+     	<div class="row mar"  style="padding-left: 15px!important">
+			<%= menu_form.text_area :menu, :required =>true %>
 		</div>
 		<br>
-		<div class="row mar pdng" style="padding-left: 20px!important"> Do you want to Delete? <%= menu_form.check_box '_destroy' %>
+		<div class="row mar pdng">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
+				<%= menu_form.label :Price , class: "wei" %>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
+    			<%= menu_form.number_field :price, min: 35 , max:150, step: 5, value: 50 %>
+   			</div>
+    		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
+  				<%= menu_form.label :Max_Quantity, class: "wei" %>
+  			</div>
+  			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
+				<%= menu_form.number_field :max_quantity, min:10 , max:50, step: 2, value: 20 %>
+			</div>
+		</div>
+		<br>
+		<div class="row mar" style="padding-left: 16px!important"> Do you want to Delete? <%= menu_form.check_box '_destroy' %>
 		</div>
 		<br>
 		<%end%>
+			<div class="row mar pdng"> <p class="text-al"><%= f.link_to_add "Add Menu Here", :menus %><i class="glyphicon glyphicon-menu-down mar-l">	</i></p>
+			</div>
+			<div class="text-al">
+    		<input type="submit" name="commit" value="Submit" data-disable-with="Submit">
+    		</div>
+		</div>
+		<% end %>
 	</div>
-	<div class="row mar pdng"> <p class="text-al"><%= f.link_to_add "Add Menu Here", :menus %><i class="glyphicon glyphicon-menu-down mar-l"></i></p>
-	</div>
-	<div class="text-al">
-    <input type="submit" name="commit" value="Submit" data-disable-with="Submit">
-    </div>
-<% end %>
+<div class="col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
 </div>
 <!-- <script type="text/javascript">
 	// $(document).ready(function(){
