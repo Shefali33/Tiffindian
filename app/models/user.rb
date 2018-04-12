@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
-  accepts_nested_attributes_for :menus
+  accepts_nested_attributes_for :menus, :allow_destroy => true
   has_many :master_meals, through: :menus
   has_many :master_categorys, through: :menus
 

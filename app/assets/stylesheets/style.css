@@ -1,7 +1,9 @@
 /*body{
 	padding-top: 90px;
 }*/
-
+body{
+font-family: 'Raleway', sans-serif !important;
+}
 
 .mar {
 	margin:0 !important;
@@ -302,7 +304,7 @@ h3 {
 	/*margin-right: 30px;
 	margin-bottom: 30px;*/
 	/*background-color:black;*/
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Raleway', sans-serif !important;
 	color: black;
 	text-transform: uppercase;
 
@@ -344,7 +346,7 @@ h3 {
 	position: relative;
 	background-color: white;
 	/*opacity: 0.6;*/
-	font-family: 'Dosis', sans-serif;
+	/*font-family: 'Raleway', sans-serif !important;*/
 	color: black;
 	
 	display: table;
@@ -364,7 +366,7 @@ h3 {
 	line-height: 200px;
 	text-align: center;
 	font-size: 25px;
-	color: #4baf4f;
+	color: #795c55;
 	font-weight: bold;
 }
 
@@ -395,7 +397,7 @@ h3 {
 {
 	color: white !important;
 	font-size: 16px;
-	font-family: 'Open Sans', sans-serif !important;
+	font-family: 'Raleway', sans-serif !important;
 	margin-top: 4px;
 }
 
@@ -495,7 +497,40 @@ opacity: .6;
 }
 .wei{
 	font-weight: normal !important;
+	color: white !important;
+	font-family: 'Raleway', sans-serif !important;
+	font-size: 16px;
 }
 .cen{
 	text-align: center;
+}
+
+.fpd{
+	padding: 6px!important;
+}
+
+/*.my-image {
+   background-image:url(current_user.image_url(mypicture.jpg));
+}*/
+.b::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	opacity: .6; 
+
+
+}
+.m{
+	  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 30px 40px 30px 40px;
+box-shadow: 3px 3px #B97;
+  background: #9152f8;
+  background: -webkit-linear-gradient(top,#450,#a1a1);
+}
 }
