@@ -26,8 +26,8 @@
 		<%= menu_form.select :master_day_id, options %>
 	</div>
 </div>
-
-<div class="row">
+<!--     <td><%= link_to 'Edit', edit_menu_path(menu_form) %></td>
+ --><div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mar_b cen">
 		<%= menu_form.label :Price , class: "wei" %>
     <%= menu_form.number_field :price, min: 35 , max:150, step: 5, value: 50 %>
@@ -44,9 +44,6 @@
     <%= menu_form.text_area :menu, class: "wei" %></div>
 </div>
 <hr>
+<a href="/menus/edit">menu edit</a>
 <% end %>
-
-  
-
-   
 <% end %>

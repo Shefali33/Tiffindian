@@ -27,6 +27,7 @@ class MenusController < ApplicationController
 
   # GET /menus/1/edit
   def edit
+      # @menu = current_user.menus.find(params[:id])
   end
 
   # POST /menus
