@@ -1,56 +1,63 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-fluid" style="background-color: #999999;">
+    <div class="l1">
+    <div class="container-login100">
+      <div class="login100-more" style="opacity:0.6; background-image: url('/assets/tk.jpg');">
+</div>
+      <div class="w-login" >
+<span class="login100-form-title">Edit <%= resource_name.to_s.humanize %></span>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put,:multipart => true }) do |f| %>
 
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="wrap-input100 validate-input">
+<label class="label-input100" for="user_email">Email</label>
+    <input class="input100 out" autofocus="autofocus" autocomplete="email" type="email" value="<%=current_user.email%>" name="user[email]" id="user_email">
+     <span class="focus-input100"></span>
+</div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_password">Password</label> <i>(leave blank if you don't want to change it)</i><br />
+    <input class="input100 out" autocomplete="off" type="password" name="user[password]" id="user_password">
+     <span class="focus-input100"></span>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_password_confirmation">Password confirmation</label>
+    <input class="input100 out" autocomplete="off" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+    <span class="focus-input100"></span>
+</div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-<!-- 
-<% if @user.master_role_id == 2 %>
-
-<input class="out" type="file" name="user[image]" id="user_image">
-<% end %> -->
+<div class="wrap-input100 validate-input">
+    <label class="label-input100" for="user_current_password">Current password</label> <i>(Current password to confirm your changes)</i>
+   <input class="input100 out" autocomplete="off" type="password" name="user[current_password]" id="user_current_password" required="true">
+   <span class="focus-input100"></span>
+</div>
 <% if @user.master_role_id == 2 %>
 <p>
   <% if @user.image.exists? %>
-      <%= image_tag @user.image.url(:thumb) %><br/>
+      <%= image_tag @user.image.url(:thumb),class: "imge" %><br />
   <% end %>
-  <%= f.label :image, "Attach a New Image" %><br />
+  <%= f.label :image, "Attach a New Image" %>
   <%= f.file_field :image %>
 </p>
 <% end %>
-  <div class="actions">
-    <%= f.submit "Update" %>
+  
+<div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+    <%= f.submit "Update", class: "login100-form-btn" %>
   </div>
+</div>
 <% end %>
+  <div class="panel panel-default mt">
+<h3 class="panel-heading ff">Cancel my account</h3>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<p class="panel-body">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "buto" %></p>
+</div>
+</div>
+</div>
+</div>
+</div>
