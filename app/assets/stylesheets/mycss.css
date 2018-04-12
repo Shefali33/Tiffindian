@@ -786,3 +786,47 @@ text-align: center;
 .ff{
   font-family: 'Raleway', sans-serif !important;
 }
+.bttn{
+     width: 120px;
+    height: 50px;
+    position: relative;
+    background-color: transparent;
+    border: 2px solid grey;
+    border-radius: 50px;
+    font-family: 'Raleway', sans-serif !important;
+    color: grey;
+    font-weight: 400;
+    font-size: 1.2em;
+    cursor: pointer;
+    overflow: hidden;
+}
+.mt{
+  margin-top: 30px;
+  margin-bottom: 0px !important;
+}
+.buto{
+   background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #555555;
+}
+.w-login{
+  width: 520px;
+  min-height: 100vh;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+  padding: 50px 50px 0px 50px;
+
+}
+.imge{
+  height: 150px;
+  width: 200px;
+}
