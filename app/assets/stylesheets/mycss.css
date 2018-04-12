@@ -246,9 +246,9 @@ background-color: transparent;
   border-radius: 10px;
   overflow: hidden;
   padding: 30px 40px 30px 40px;
-box-shadow: 3px 3px #B97;
+/*box-shadow: 3px 3px #B97;*/
   background: #9152f8;
-  background: -webkit-linear-gradient(top,#450,#a1a1);
+  background: -webkit-linear-gradient(top,black,#a1a1);
 }
 @media (max-width: 576px) {
   .l3 {
@@ -705,6 +705,9 @@ font-family: 'Raleway', sans-serif !important;
   line-height: 1.2;
 
 }
+.login100-form-btn:hover{
+  color: #2F4F4F;
+}
 
 .wrap-login100-form-btn:hover .login100-form-bgbtn {
   bottom: 0;
@@ -779,4 +782,7 @@ text-align: center;
 .add_nested_fields:hover{
   color: black;
   text-decoration: none;
+}
+.ff{
+  font-family: 'Raleway', sans-serif !important;
 }
