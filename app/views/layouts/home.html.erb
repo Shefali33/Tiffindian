@@ -11,6 +11,7 @@
    <script src="/assets/javascripts/icheck.js"></script> -->
   </head>
  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <body class="mar" id="page-top" data-spy="scroll" data-target=".navbar"">
 
     <nav id="menu" class="navbar navbar-default navbar-fixed-top clr">
@@ -169,6 +170,31 @@ $(document).ready(function(){
        });
       });
 });
+
+$('.js-example-basic-single').select2({
+  theme: "flat"
+});
+
+// $('.js-example-basic-multiple').select2({
+//   theme: "flat"
+// });
+
+$("#singleSelectExample").select2({
+  placeholder: 'Select an option...',
+  theme: "flat",
+  allowClear: true
+});
+$(".js-example-placeholder-single").select2({
+  placeholder: 'Select an option...',
+  theme: "flat",
+  allowClear: true
+});
+ 
+$(".js-example-placeholder-multiple").select2({
+  placeholder: "Select a option",
+  theme: "flat"
+});
+
 
 
 </script>

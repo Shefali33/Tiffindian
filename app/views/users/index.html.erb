@@ -85,9 +85,20 @@
     <div class="txt">Amazing Variety</div>
     </div> 
   </div>
+  <% @users.each do |user| %>
+<% user.menus.map(&:price).each do |pri| %>
+<%= pri %>
+
+<!-- lowest = pri.min
+highest = pri.max
+total = pri.inject(:+)
+len = pri.length
+average = total.to_f / len -->
 </div>
 
+<% end %>
 
+<% end %>
 
 <div class="bgimg-2">
   <!-- <div class="overlay1"> -->

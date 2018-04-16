@@ -2,7 +2,8 @@
 
   <div  id=rmeals>
   	<% @users.each do |user| %>
-  <%if user.master_role_id == 2 %>	
+  <%if user.master_role_id == 2 %>
+  <% if user.menus.present? %>	
    <div class="sup">
    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;" >
 
@@ -12,7 +13,16 @@
    <div class="row">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
    <div> <%= link_to user.name,user,class: "txtt" %></div>
-   <div> <%= link_to user.email,user,class: "txtt1" %> </div>
+   <div> <%= link_to user.email,user,class: "txtt1" %><br />
+   <%= user.menus.maximum('price') %>
+   <%= user.menus.minimum('price') %>
+<%= user.menus.price %>
+  <% if user.menus.average('price').between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price) %>
+  standard
+ <% elsif user.menus.average('price').between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price) %>
+ premium 
+  <% end %> 
+ </div>
    </div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
    <div><%= link_to 'BOOK NOW',user, :class=>"cd-popup-trigger"%></div>
@@ -21,7 +31,7 @@
   </div>
    </div>
    </div>
-
+<% end %>
    <%end%>
   <% end%>
 </div>

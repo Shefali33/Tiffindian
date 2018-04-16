@@ -6,11 +6,11 @@ class User < ApplicationRecord
   belongs_to :master_role
   has_many :menus
   has_many :memberships, through: :master_subscriptions
-    has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100#", disp:"200x200#" }
+    has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100#", disp:"200x200#", bg:"600x800#" }
 
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
-  accepts_nested_attributes_for :menus
+  accepts_nested_attributes_for :menus, :allow_destroy => true
   has_many :master_meals, through: :menus
   has_many :master_categorys, through: :menus
 

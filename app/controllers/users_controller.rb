@@ -4,6 +4,7 @@
   # GET /users
   # GET /users.json
   def index
+        # @price = MasterSubscription.find(params[:user][:price])
     @users = User.all
     @meals = MasterMeal.all
     @disabled_meals = @meals
@@ -152,6 +153,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-     params.require(:user).permit(:name, :email, :password, :image, :password_confirmation, :master_role_id, :menus_attributes => [:master_meal_id, :master_category_id, :master_day_id, :price, :menu])
+     params.require(:user).permit(:name, :email, :password, :image, :password_confirmation, :master_role_id, :menus_attributes => [:id, :master_meal_id, :master_category_id, :master_day_id, :price, :menu, :_destroy])
     end
 end
