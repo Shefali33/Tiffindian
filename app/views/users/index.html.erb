@@ -18,71 +18,53 @@
   </div>
 </header>
 </div>
-
 <div class="row mar pdng">
-    <% if current_user.present?%>
-  <div class="selection">
-   <div class="overlay2">
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="text-align: center;">
-<!-- Date: <input type="text" id="datepicker"> -->
-<!-- <label for="Date"> Date</label> -->
-
- <i class="glyphicon glyphicon-calendar cal" style="color: white;"></i><input class="datepicker" type="text" name="Date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DD/MM/YY'" placeholder="DD/MM/YY " > 
- </div>
-<div id="rad">
-  <%= render partial: '/users/radiomeal'%>
+  <% if current_user.present?%>
+    <div class="selection1">
+      <div class="overlay2">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="text-align: center;">
+          <i class="glyphicon glyphicon-calendar cal" style="color: white;"></i><input class="datepicker" type="text" name="Date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DD/MM/YY'" placeholder="DD/MM/YY " > 
+        </div>
+        <div id="rad">
+          <%= render partial: '/users/radiomeal'%>
+        </div>
+        <div id="cat">
+          <%= render partial: '/users/category' %>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12" style="text-align: center;">
+          <%= number_field_tag 'quantity','1', min: 1, max: 50, step: 1%>
+        </div>
+      </div>
+    </div>
+  <%end%>
 </div>
-<div id="cat">
-<%= render partial: '/users/category' %>
-</div>
-  <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12" style="text-align: center; colo">
-   <%= number_field_tag 'quantity','1', min: 1, max: 50, step: 1%>
-  </div>
-
-</div>
-</div>
-   <%end%>
-</div>
-
 <div id="wt">
   <div class="row mar pdng">
-   <div class=" col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
-     <img class="img-responsive" src="/assets/f11.png">
-    </div> 
-    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
-    <div class="txt">Ghar Ka Khana</div>
-    </div> 
-    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng">
-     <img class="img-responsive" src="/assets/f22.png">
-   </div>
-    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
-    <div class="txt">Tezz Delivery</div>
-    </div>  
-   <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 20px!important;">
-     <img class="img-responsive" src="/assets/f33.png">
-   </div> 
-    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
-    <div class="txt">Swasth khana</div>
+    <div class=" col-lg-3 col-md-3 col-sm-3 hidden-xs mar pdng">
+    </div>
+    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 mar pdng txt"> BOOK Your Meals !!!
+    </div>
+    <div class=" col-lg-3 col-md-3 col-sm-3 hidden-xs mar pdng">
     </div> 
   </div>
-   <div class="row mar pdng">
-   <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng">
-     <img class="img-responsive" src="/assets/f44.png">
-    </div> 
-    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
-    <div class="txt">Phone se book kar</div>
-    </div> 
-    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng">
-     <img class="img-responsive" src="/assets/f55.png">
-   </div>
-    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
-    <div class="txt">Big Basket</div>
-    </div>  
-   <div class="col-lg-2 col-sm-2 col-md-2 col-xs-5  mar pdng" style="padding-top: 10px!important;">
-     <img class="img-responsive" src="/assets/f66.png">
-   </div> 
-    <div class="col-lg-2 col-sm-4 col-md-2 col-xs-7 mar pdng">
-    <div class="txt">Amazing Variety</div>
+    <div class="row mar pdng">
+      <div class="col-lg-1 col-sm-2 col-md-1 col-xs-5  mar pdng">
+        <img class="img-responsive" src="/assets/brk.png">
+      </div> 
+      <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 mar pdng">
+        <div class="txt">7 A.M - 10 A.M</div>
+      </div> 
+      <div class="col-lg-1 col-sm-2 col-md-1 col-xs-5  mar pdng">
+        <img class="img-responsive" style="margin-top: 20px" src="/assets/lnch.png">
+      </div>
+      <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 mar pdng">
+        <div class="txt">12 Noon - 3 P.M</div>
+      </div>  
+      <div class="col-lg-1 col-sm-2 col-md-3 col-xs-5  mar pdng">
+        <img class="img-responsive" src="/assets/dinr.png">
+      </div> 
+    <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 mar pdng">
+    <div class="txt">7 P.M - 10 P.M</div>
     </div> 
   </div>
   <% @users.each do |user| %>
