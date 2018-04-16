@@ -1,4 +1,20 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="container mar pdng">
+	<div class="row mar pdng">
+		<div class="col-lg-4 col-md-4 hidden-sm hidden-xs pdng">
+			<%= image_tag @users.image.url(:bg), class: "center-block img-responsive"  %>
+		</div>
+		<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
+			<h3 style="font-weight: bold"><%= @users.name %></h3><br>
+			 <% @user.menus.each do |me|%>
+			 <% if me.master_category_id == 1%> 
+             <%= me.master_category.category%><br>     
+             <%= me.master_meal.meals_type%>
+             <%= me.menu%>
+             <%end%>
+             <%end%>
+		</div>
+	
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
