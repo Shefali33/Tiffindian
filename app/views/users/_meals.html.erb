@@ -12,14 +12,13 @@
                 <div class="txtt1"> 
                   <% user.menus.map(&:menu).uniq.each do |me|%> 
                   <%= me%>
-                   <%= user.menus.maximum('price') %>
-   <%= user.menus.minimum('price') %>
-<!-- <div><%= user.menus.map(&:price) %></div> -->
-  <% if user.menus.average('price').between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price) %>
-  standard
- <% elsif user.menus.average('price').between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price) %>
- premium 
-  <% end %> 
+                  <%= user.menus.maximum('price') %>
+                  <%= user.menus.minimum('price') %>
+                  <% if user.menus.average('price').between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price) %>
+                    Standard
+                      <% elsif user.menus.average('price').between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price) %>
+                      Premium 
+                    <% end %> 
                   <%end%>
                 </div>
               </div>

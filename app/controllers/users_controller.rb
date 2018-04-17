@@ -75,6 +75,7 @@
 
   def menu_create
     @menu = current_user.update(user_params)
+    debugger
       redirect_to root_path
   end
   def meals

@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 20180416062645) do
     t.bigint "master_day_id"
     t.string "menu"
     t.integer "price"
-    t.integer "max_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["master_category_id"], name: "index_menus_on_master_category_id"

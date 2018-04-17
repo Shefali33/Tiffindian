@@ -1,20 +1,48 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<div class="container mar pdng">
+<div class="container-fluid mar pdng">
 	<div class="row mar pdng">
 		<div class="col-lg-4 col-md-4 hidden-sm hidden-xs pdng">
 			<%= image_tag @users.image.url(:bg), class: "center-block img-responsive"  %>
 		</div>
 		<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
-			<h3 style="font-weight: bold"><%= @users.name %></h3><br>
-			 <% @user.menus.each do |me|%>
-			 <% if me.master_category_id == 1%> 
-             <%= me.master_category.category%><br>     
-             <%= me.master_meal.meals_type%>
-             <%= me.menu%>
-             <%end%>
-             <%end%>
-		</div>
-	
+			<h3 style="font-weight: bold"><%= @users.name %></h3>
+			<%= @user.contact_no%><br>
+			<%= @user.email%>
+			<br>
+			<br>
+			<div class="row">
+			<div class="col-lg-6 col-md-6">
+			 Veg MENU	
+			</div>	
+			<div class="col-lg-6 col-md-6">
+			 Non-Veg MENU	
+			</div>	
+			</div>
+			<div class="row">
+				<% @user.menus.each do |me|%>
+					<% if me.master_category_id == 1%> 
+						<div class="col-lg-6 col-md-6">
+			 				<%= me.master_day.days%>   
+             				<%= me.master_meal.meals_type%>
+             				<%= me.menu%>
+             			</div>
+             		<% elsif me.master_category_id == 2%>
+             			<div class="col-lg-6 col-sm-6">
+             			   
+             				<%= me.master_meal.meals_type%>
+             				<%= me.menu%>
+             			</div>
+             		<%end%>
+            	<%end%>
+            </div>	
+    	</div>
+    	<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
+    		
+    	</div>
+    </div>
+</div>
+		
+	<!-- 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->
