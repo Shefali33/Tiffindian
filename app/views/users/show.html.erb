@@ -39,7 +39,6 @@
     	<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
     		<% if @user.master_subscriptions_id == 1%>
     			STANDARD
-    			<%byebug%>
     			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "1","0")%>
     		<%elsif @user.master_subscriptions_id == 2%>
     			PREMIUM
