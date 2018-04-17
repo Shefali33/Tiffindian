@@ -74,12 +74,13 @@
   end
 
   def menu_create
-    @menu = current_user.update(user_params)
-   if current_user.menus.average(:price).between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price)
-    current_user.update_attributes(:master_subscriptions_id => 1)
-  elsif current_user.menus.average(:price).between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price)
-    current_user.update_attributes(:master_subscriptions_id => 2)
-  end
+    if current_user.update(user_params)
+       if current_user.menus.average(:price).between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price)
+        current_user.update_attributes(:master_subscriptions_id => 1)
+      elsif current_user.menus.average(:price).between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price)
+        current_user.update_attributes(:master_subscriptions_id => 2)
+      end
+    end
       redirect_to root_path
   end
   
