@@ -21,6 +21,8 @@
   def show
      @users = User.all
      @users = User.find(params[:id])
+     params[:subscription_id]
+     
   end
 
   # GET /users/new
@@ -83,7 +85,7 @@
     end
       redirect_to root_path
   end
-  
+
   def meals
   if params[:meal_id] && params[:category_id]
     @users = []

@@ -64,22 +64,19 @@
 		</div>
 		<br>
 		<%end%>
-			<div class="row mar pdng"> <p class="text-al"><%= f.link_to_add "Add Menu Here", :menus %><i class="glyphicon glyphicon-menu-down mar-l">	</i></p>
-			</div>
-			<div class="text-al">
-    		<input type="submit" name="commit" value="Submit" data-disable-with="Submit">
+			<div class="row mar pdng">
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 float"> <%= f.link_to_add "Add Menu Here", :menus %><i class="glyphicon glyphicon-menu-down mar-l"></i>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 float">
+    				<input type="submit" name="commit" value="Submit" data-disable-with="Submit">
+    			</div>
     		</div>
 		</div>
 		<% end %>
 	</div>
 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
 </div>
-<!-- <script type="text/javascript">
-	// $(document).ready(function(){
-	// 	$(".js-example-basic-single").select2();
-	// })
-	
-</script> -->
+
 
 <script type="text/javascript">
 	$(document).ready(function(){

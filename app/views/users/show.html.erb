@@ -37,11 +37,41 @@
             </div>	
     	</div>
     	<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
-    		
+    		<% if @user.master_subscriptions_id == 1%>
+    			STANDARD
+    			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "1","0")%>
+    		<%elsif @user.master_subscriptions_id == 2%>
+    			PREMIUM
+    			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%>
+    		<%end%>
     	</div>
     </div>
 </div>
-		
+<script type="text/javascript">
+	$(document).ready(function(){
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat',
+    radioClass: 'iradio_flat'
+    });
+    $('.select-2-category').select2({
+    placeholder: "Select"
+
+  });
+ });
+	
+$('.chck').on('ifClicked',function(){
+        var c =  $(".chck:checked").val();
+        var user_id = <%= current_user.id%>
+        alert(c);
+        $.ajax({
+        dataType: "script", 
+        type: "GET",
+        url: '/users/' + user_id +'',
+        data: {subscription_id : c}
+       });
+    });
+       
+</script>		
 	<!-- 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
