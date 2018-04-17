@@ -75,9 +75,14 @@
 
   def menu_create
     @menu = current_user.update(user_params)
-    debugger
+   if current_user.menus.average(:price).between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price)
+    current_user.update_attributes(:master_subscriptions_id => 1)
+  elsif current_user.menus.average(:price).between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price)
+    current_user.update_attributes(:master_subscriptions_id => 2)
+  end
       redirect_to root_path
   end
+  
   def meals
   if params[:meal_id] && params[:category_id]
     @users = []
@@ -156,6 +161,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-     params.require(:user).permit(:name, :email, :password, :image, :password_confirmation, :master_role_id, :menus_attributes => [:id, :master_meal_id, :master_category_id, :master_day_id, :price, :menu, :_destroy])
+     params.require(:user).permit(:name, :email, :password, :image, :password_confirmation, :master_role_id, :menus_attributes => [:id, :master_meal_id, :master_category_id, :master_day_id, :price, :menu, :_destroy, :max_quantity])
     end
 end
