@@ -1,4 +1,4 @@
 class MasterSubscription < ApplicationRecord
-	belongs_to :user
-	belongs_to :membership
+	# belongs_to :user
+	# belongs_to :membership
 end
