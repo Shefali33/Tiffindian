@@ -566,3 +566,17 @@ width: 88%;
 	
 	padding: 30px!important;
 }
+.fa-fa1{
+	
+	font-size: 20px!important;
+	color: green!important;	
+	margin: 0 10px 0 10px!important;
+}
+.fa-fa1:hover{
+	text-decoration: none!important;
+	color: green!important;
+}
+.fa-fa1:visted{
+	text-decoration: none!important;
+	color: green!important;
+}

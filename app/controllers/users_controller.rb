@@ -22,7 +22,7 @@
      @users = User.all
      @users = User.find(params[:id])
      params[:subscription_id]
-     
+     debugger
   end
 
   # GET /users/new

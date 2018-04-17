@@ -28,7 +28,7 @@
              			</div>
              		<% elsif me.master_category_id == 2%>
              			<div class="col-lg-6 col-sm-6">
-             			   
+             			    <%= me.master_day.days%>
              				<%= me.master_meal.meals_type%>
              				<%= me.menu%>
              			</div>
@@ -53,13 +53,9 @@
     checkboxClass: 'icheckbox_flat',
     radioClass: 'iradio_flat'
     });
-    $('.select-2-category').select2({
-    placeholder: "Select"
-
-  });
- });
-	
-$('.chck').on('ifClicked',function(){
+  // $('.chck').removeAttr('checked');
+  $('input').iCheck('uncheck');
+  $('.chck').on('ifToggled',function(){
         var c =  $(".chck:checked").val();
         var user_id = <%= current_user.id%>
         alert(c);
@@ -70,6 +66,9 @@ $('.chck').on('ifClicked',function(){
         data: {subscription_id : c}
        });
     });
+  });
+	
+
        
 </script>		
 	<!-- 

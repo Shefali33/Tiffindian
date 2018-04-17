@@ -64,10 +64,23 @@
     <img src="/assets/1.png"></a> -->
   </div>
   <div class=" col-md-4 col-sm-4 col-xs-12" style="text-align: center;">
+    <% if !current_user.present?%>
     <div><a href= "/users/supplier_signup" style="margin-top: 10px" class="ftr">Register As a Supplier</div>
-      <div><i class="glyphicon glyphicon-facebook"></i>
-          <i class="fa fa-twitter "></i>
-          <i class="fa fa-instagram"></i></div>
+      <div>
+        <a class="fa-fa1" href="http://facebook.com"><i class="fa fa-facebook"></i></a>
+        <a class="fa-fa1" href="http://whatsapp.com"><i class="fa fa-whatsapp"></i></a>
+        <a class="fa-fa1" href="http://instagram.com">  <i class="fa fa-instagram"></i></a>
+        <a class="fa-fa1" href="http://twitter.com">  <i class="fa fa-twitter"></i></a>
+      </div>
+     <%else%>
+      <div class="ftr">Our Social Media Handles</div> 
+      <div>
+        <a class="fa-fa1" href="http://facebook.com"><i class="fa fa-facebook"></i></a>
+        <a class="fa-fa1" href="http://whatsapp.com"><i class="fa fa-whatsapp"></i></a>
+        <a class="fa-fa1" href="http://instagram.com">  <i class="fa fa-instagram"></i></a>
+        <a class="fa-fa1" href="http://twitter.com">  <i class="fa fa-twitter"></i></a>
+      </div>
+      <%end%>
        <!--  <a href= "/users/supplier_signup" class="fooo">Supplier Sign_Up
           <img src="/assets/f1.png"></a> -->
   </div>
