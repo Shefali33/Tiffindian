@@ -19,6 +19,7 @@ resources :supplier
   get '/users/meals', to: 'users#meals'
   get '/users/radiomeal', to: 'users#radiomeal'
   get '/users/category', to: 'users#category'
+  get '/users/membership', to: 'users#membership'
   end
   post '/menu_create', to:'users#menu_create'
   resources :users

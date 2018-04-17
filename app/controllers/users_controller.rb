@@ -21,8 +21,9 @@
   def show
      @users = User.all
      @users = User.find(params[:id])
-     params[:subscription_id]
-     
+    @subs = params[:subscription_id]
+    current_user.update_attributes(:master_subscriptions_id => @subs)
+
   end
 
   # GET /users/new
@@ -113,6 +114,12 @@ def category
       format.js
     end
 end
+
+
+def membership
+  
+end
+
 
   def radiomeal
     @meals = MasterMeal.all
