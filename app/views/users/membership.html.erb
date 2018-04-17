@@ -1,0 +1,12 @@
+<h1>Membership page</h1>
+  	<% if current_user.present?%>
+  			<% if !current_user.master_subscriptions_id.present? %>
+					<% if current_user.master_subscriptions_id == 1 %>
+							STANDARD
+					<%elsif current_user.master_subscriptions_id == 2%>
+    						PREMIUM
+    		<% else %>
+    			You don't have any membership
+  					<% end %>
+			<% end %>
+	<% end %>

@@ -21,9 +21,9 @@
   def show
      @users = User.all
      @users = User.find(params[:id])
-     params[:subscription_id]
-     debugger
-  end
+    @subs = params[:subscription_id]
+    current_user.update_attributes(:master_subscriptions_id => @subs)
+ end
 
   # GET /users/new
   def new
@@ -76,12 +76,13 @@
   end
 
   def menu_create
-    @menu = current_user.update(user_params)
-   if current_user.menus.average(:price).between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price)
-    current_user.update_attributes(:master_subscriptions_id => 1)
-  elsif current_user.menus.average(:price).between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price)
-    current_user.update_attributes(:master_subscriptions_id => 2)
-  end
+    if current_user.update(user_params)
+       if current_user.menus.average(:price).between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price)
+        current_user.update_attributes(:master_subscriptions_id => 1)
+      elsif current_user.menus.average(:price).between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price)
+        current_user.update_attributes(:master_subscriptions_id => 2)
+      end
+    end
       redirect_to root_path
   end
 
@@ -112,6 +113,12 @@ def category
       format.js
     end
 end
+
+
+def membership
+  
+end
+
 
   def radiomeal
     @meals = MasterMeal.all
