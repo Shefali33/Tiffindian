@@ -580,3 +580,30 @@ width: 88%;
 	text-decoration: none!important;
 	color: green!important;
 }
+.menu-items-head{
+	padding: 5px;
+	text-transform: uppercase;
+	border: 1px solid grey;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.menu-items{
+	padding:5px!important;
+	text-transform: uppercase;
+	border: 1px solid black;
+	font-size: 12px;
+	overflow-x: scroll;
+}
+.font-wt{
+	font-weight: bold;
+}
+.font-size{
+	font-size: 16px;
+	margin: 20px 0 10px 0;
+}
+.txt-al{
+	text-align: center;
+	font-size: 13px;
+	color: grey;
+}

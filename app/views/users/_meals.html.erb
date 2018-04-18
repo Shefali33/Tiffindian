@@ -2,18 +2,16 @@
 <div  id=rmeals>
   <% @users.each do |user| %>
     <%if user.master_role_id == 2 %>	
-        <% if user.menus.present? %>
-        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 mt-30" >
+      <% if user.menus.present? %>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 mt-30">
           <div class="thumbnail thumbs mar pdng">
             <%= link_to (image_tag user.image.url(:disp), class: "img-responsive"),user %>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
                 <div> <%= link_to user.name,user,class: "txtt" %></div>
-                <div class="txtt1"> 
+                <div class="txtt1" style="overflow: hidden;"> 
                   <% user.menus.map(&:menu).uniq.each do |me|%> 
                   <%= me%>
-                  <%= user.menus.maximum('price') %>
-                  <%= user.menus.minimum('price') %>
                   <% if user.menus.average('price').between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price) %>
                     Standard
                       <% elsif user.menus.average('price').between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price) %>
@@ -28,8 +26,7 @@
             </div>
           </div>
         </div>
-     
-    <%end%>
+      <%end%>
     <% end %>
   <% end%>
 </div>

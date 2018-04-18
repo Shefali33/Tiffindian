@@ -1,48 +1,50 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="container-fluid mar pdng">
 	<div class="row mar pdng">
-		<div class="col-lg-4 col-md-4 hidden-sm hidden-xs pdng">
+		<div class="col-lg-3 col-md-3 hidden-sm hidden-xs pdng">
 			<%= image_tag @users.image.url(:bg), class: "center-block img-responsive"  %>
 		</div>
-		<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
-			<h3 style="font-weight: bold"><%= @users.name %></h3>
+		<div class=" col-lg-7 col-md-7 col-sm-9 col-xs-9">
+			<h3 class="font-wt"><%= @users.name %></h3>
 			<%= @user.contact_no%><br>
 			<%= @user.email%>
 			<br>
 			<br>
-			<div class="row">
-			<div class="col-lg-6 col-md-6">
+			<div class="row mar">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-5 menu-items-head">
 			 Veg MENU	
 			</div>	
-			<div class="col-lg-6 col-md-6">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-7 menu-items-head">
 			 Non-Veg MENU	
 			</div>	
 			</div>
-			<div class="row">
+			<div class="row mar pdng">
 				<% @user.menus.each do |me|%>
 					<% if me.master_category_id == 1%> 
-						<div class="col-lg-6 col-md-6">
-			 				<%= me.master_day.days%>   
-             				<%= me.master_meal.meals_type%>
-             				<%= me.menu%>
-             			</div>
+						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar pdng menu-items"><%= me.master_day.days%></div>  
+             			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 mar pdng menu-items"><%= me.master_meal.meals_type%></div>
+             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 mar pdng menu-items"><%= me.menu%></div>   			
              		<% elsif me.master_category_id == 2%>
-             			<div class="col-lg-6 col-sm-6">
-             			    <%= me.master_day.days%>
-             				<%= me.master_meal.meals_type%>
-             				<%= me.menu%>
-             			</div>
+             			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar pdng menu-items"><%= me.master_day.days%></div>  
+             			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 mar pdng menu-items"><%= me.master_meal.meals_type%></div>
+             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 mar pdng menu-items"><%= me.menu%></div>  
              		<%end%>
             	<%end%>
             </div>	
     	</div>
-    	<div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6">
+    	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-3">
+    		<div class="font-wt fpd font-size">SUBSCRIPTIONS
+    			<i class="fa fa-handshake-o"></i>
+    		</div>
+    		<div class="fpd txt-al">Memberships valid for 2 Months</div>
+    		<div class="fpd txt-al">Checking the box will allow user to buy Subscription<i class="fa fa-hand-o-down"></i></div>
     		<% if @user.master_subscriptions_id == 1%>
-    			STANDARD
-    			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "1","0")%>
+    			<div class="txt-al fdp" style="margin-top: 5px;">STANDARD
+    			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "1","0")%></div>
     		<%elsif @user.master_subscriptions_id == 2%>
-    			PREMIUM
-    			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%>
+    			<div class="txt-al fdp" style="margin-top: 5px;">PREMIUM
+    			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%></div>
+    		<% else %>
     		<%end%>
     	</div>
     </div>

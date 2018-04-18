@@ -124,7 +124,6 @@ end
     @meals = MasterMeal.all
     d = params[:date]
     date = d.to_date 
-    # byebug
     if date == Date.today
     time = Time.now.seconds_since_midnight
 
