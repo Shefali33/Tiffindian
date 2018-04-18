@@ -5,6 +5,7 @@ $('input').iCheck({
     checkboxClass: 'icheckbox_flat-green',
     radioClass: 'iradio_flat-green'
  });
+$(document).ready(function(){
 $('.radio_box').on('ifToggled',function(){
         var a =  $(".radio_box2:checked").val();
         alert(a);
@@ -17,4 +18,5 @@ $('.radio_box').on('ifToggled',function(){
         data: {meal_id : a, category_id : b }
        });
       });
+});
 
