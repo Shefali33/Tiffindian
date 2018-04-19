@@ -13,7 +13,7 @@ MasterCategory.create([{ id: 1, category: 'veg'}, { id: 2, category: 'non-veg'}]
 MasterMeal.create([{ id: 1, meals_type: 'breakfast'}, { id: 2, meals_type: 'lunch'}, 
 		{ id: 3, meals_type: 'dinner'}])
 
-MasterSubscription.create([{ id: 1, subscription: 'standard', min_price: 50, max_price:100}, { id: 2, subscription: 'premium', min_price: 101, max_price:150}])
+MasterSubscription.create([{ id: 1, subscription: 'standard', min_price: 50, max_price: 100, quantity_offered: 50}, { id: 2, subscription: 'premium', min_price: 101, max_price: 150, quantity_offered: 50}])
 
 MasterDay.create([{ id: 1, days: 'monday'}, { id: 2, days: 'tuesday'}, { id: 3, days: 'wednesday'},
 	 { id: 4, days: 'thrusday'}, { id: 5, days: 'friday'}])
