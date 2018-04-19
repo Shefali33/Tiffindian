@@ -9,20 +9,26 @@
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
                 <div> <%= link_to user.name,user,class: "txtt" %></div>
-                <div class="txtt1" style="overflow: hidden;"> 
-                  <% user.menus.map(&:menu).uniq.each do |me|%> 
-                  <%= me%>
+                <div class="txtt1" style="overflow: hidden;">
+                <% user.menus.where(:master_category_id => @category, :master_meal_id => @meall).each do |me|%>
+                  <%= me.menu%>
                   <% if user.menus.average('price').between?(MasterSubscription.find(1).min_price,MasterSubscription.find(1).max_price) %>
                     Standard
-                      <% elsif user.menus.average('price').between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price) %>
+                  <% elsif user.menus.average('price').between?(MasterSubscription.find(2).min_price,MasterSubscription.find(2).max_price) %>
                       Premium 
                     <% end %> 
                   <%end%>
                 </div>
               </div>
+               <% if current_user.present?%>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
                 <div><%= link_to 'BOOK NOW',user, :class=>"cd-popup-trigger"%></div>
               </div>
+              <% else%>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+                <div><%= link_to 'SHOW',user, :class=>"cd-popup-trigger"%></div>
+              </div>
+              <%end%>
             </div>
           </div>
         </div>

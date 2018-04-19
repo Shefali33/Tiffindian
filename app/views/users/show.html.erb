@@ -4,17 +4,17 @@
 		<div class="col-lg-3 col-md-3 hidden-sm hidden-xs pdng">
 			<%= image_tag @users.image.url(:bg), class: "center-block img-responsive"  %>
 		</div>
-		<div class=" col-lg-7 col-md-7 col-sm-9 col-xs-9">
+		<div class=" col-lg-7 col-md-7 col-sm-9 col-xs-12">
 			<h3 class="font-wt"><%= @users.name %></h3>
 			<%= @user.contact_no%><br>
 			<%= @user.email%>
 			<br>
 			<br>
 			<div class="row mar">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-5 menu-items-head">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-items-head">
 			 Veg MENU	
 			</div>	
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-7 menu-items-head">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-items-head">
 			 Non-Veg MENU	
 			</div>	
 			</div>
@@ -32,7 +32,7 @@
             	<%end%>
             </div>	
     	</div>
-    	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-3">
+    	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12">
     		<div class="font-wt fpd font-size">SUBSCRIPTIONS
     			<i class="fa fa-handshake-o"></i>
     		</div>
@@ -45,6 +45,7 @@
     			<div class="txt-al fdp" style="margin-top: 5px;">PREMIUM
     			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%></div>
     		<% else %>
+        <div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
     		<%end%>
     	</div>
     </div>
@@ -59,7 +60,9 @@
   $('input').iCheck('uncheck');
   $('.chck').on('ifToggled',function(){
         var c =  $(".chck:checked").val();
+        <% if current_user.present?%>
         var user_id = <%= current_user.id%>
+        <%end%>
         alert(c);
         $.ajax({
         dataType: "script", 

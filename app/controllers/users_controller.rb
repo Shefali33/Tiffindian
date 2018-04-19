@@ -21,8 +21,10 @@
   def show
      @users = User.all
      @users = User.find(params[:id])
+     if current_user.present?
     @subs = params[:subscription_id]
     current_user.update_attributes(:master_subscriptions_id => @subs)
+  end
  end
 
   # GET /users/new
@@ -88,14 +90,18 @@
 
   def meals
   if params[:meal_id] && params[:category_id]
+     @category = params[:category_id]
+     @meall = params[:meal_id]
     @users = []
   Menu.where(master_meal_id: params[:meal_id], master_category_id: params[:category_id]).each do |menu|
     @users << menu.user
   end
   @users = @users.uniq
   elsif params[:meal_id]
+    @meall = params[:meal_id]
          @users = MasterMeal.find(params[:meal_id]).users.uniq
   elsif params[:category_id]
+    @category = params[:category_id]
       @users = MasterCategory.find(params[:category_id]).users.uniq  
       # == params[:meal_id])
       respond_to do |format|

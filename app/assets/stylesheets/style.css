@@ -562,9 +562,13 @@ width: 88%;
 	text-transform: uppercase;
 	font-size: 12px;
 }
-.float{
+.paddion-nested{
 	
-	padding: 30px!important;
+	padding: 10px!important;
+}
+
+.padding-button{
+	padding: 14px;
 }
 .fa-fa1{
 	
@@ -606,4 +610,9 @@ width: 88%;
 	text-align: center;
 	font-size: 13px;
 	color: grey;
+}
+.txt-al1{
+	text-align: center;
+	font-size: 13px;
+	color: red;
 }
