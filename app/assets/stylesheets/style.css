@@ -585,19 +585,16 @@ width: 88%;
 	color: green!important;
 }
 .menu-items-head{
-	padding: 5px;
+	
 	text-transform: uppercase;
-	border: 1px solid grey;
-	background-color: black;
-	color: white;
+	
 	text-align: center;
 }
 .menu-items{
-	padding:5px!important;
 	text-transform: uppercase;
-	border: 1px solid black;
+	text-align: center;
 	font-size: 12px;
-	overflow-x: scroll;
+	
 }
 .font-wt{
 	font-weight: bold;

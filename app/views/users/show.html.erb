@@ -10,45 +10,65 @@
 			<%= @user.email%>
 			<br>
 			<br>
-			<div class="row mar">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-items-head">
-			 Veg MENU	
-			</div>	
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-items-head">
-			 Non-Veg MENU	
-			</div>	
-			</div>
-			<div class="row mar pdng">
-				<% @user.menus.each do |me|%>
-					<% if me.master_category_id == 1%> 
-						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar pdng menu-items"><%= me.master_day.days%></div>  
-             			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 mar pdng menu-items"><%= me.master_meal.meals_type%></div>
-             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 mar pdng menu-items"><%= me.menu%></div>   			
-             		<% elsif me.master_category_id == 2%>
-             			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mar pdng menu-items"><%= me.master_day.days%></div>  
-             			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 mar pdng menu-items"><%= me.master_meal.meals_type%></div>
-             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 mar pdng menu-items"><%= me.menu%></div>  
-             		<%end%>
-            	<%end%>
-            </div>	
+      <div class="table-responsive">          
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="menu-items-head" colspan="3">Veg Menu</th>
+              <th class="menu-items-head" colspan="3">Non-Veg Menu</th>
+           </tr>
+           <tr>
+              <th class="menu-items-head">Day</th>
+              <th class="menu-items-head">Meal</th>
+              <th class="menu-items-head">Menu</th>
+              <th class="menu-items-head">Day</th>
+              <th class="menu-items-head">Meal</th>
+              <th class="menu-items-head">Menu</th>
+           </tr>
+          </thead>
+          <tbody>
+            <% @user.menus.each do |me|%>
+              <% if me.master_category_id == 1%>
+              <tr>
+                <td class="menu-items"><%= me.master_day.days%></td>
+                <td class="menu-items"><%= me.master_meal.meals_type%></td>
+                <td class="cen"><%= me.menu%></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <% elsif me.master_category_id == 2%>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="menu-items"><%= me.master_day.days%></td>
+                <td class="menu-items"><%= me.master_meal.meals_type%></td>
+                <td class="cen"><%= me.menu%></td>
+              </tr>
+              <%end%>
+             <%end%>
+          </tbody>
+        </table>
+      </div>
+    </div> 
+		<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12">
+    	<div class="font-wt fpd font-size">SUBSCRIPTIONS
+    		<i class="fa fa-handshake-o"></i>
     	</div>
-    	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12">
-    		<div class="font-wt fpd font-size">SUBSCRIPTIONS
-    			<i class="fa fa-handshake-o"></i>
-    		</div>
-    		<div class="fpd txt-al">Memberships valid for 2 Months</div>
-    		<div class="fpd txt-al">Checking the box will allow user to buy Subscription<i class="fa fa-hand-o-down"></i></div>
-    		<% if @user.master_subscriptions_id == 1%>
-    			<div class="txt-al fdp" style="margin-top: 5px;">STANDARD
+    	<div class="fpd txt-al">Memberships valid for 2 Months</div>
+    	<div class="fpd txt-al">Checking the box will allow user to buy Subscription<i class="fa fa-hand-o-down"></i></div>
+    	<% if @user.master_subscriptions_id == 1%>
+    		<div class="txt-al fdp" style="margin-top: 5px;">STANDARD
     			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "1","0")%></div>
-    		<%elsif @user.master_subscriptions_id == 2%>
-    			<div class="txt-al fdp" style="margin-top: 5px;">PREMIUM
+    	<%elsif @user.master_subscriptions_id == 2%>
+    		<div class="txt-al fdp" style="margin-top: 5px;">PREMIUM
     			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%></div>
-    		<% else %>
-        <div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
-    		<%end%>
-    	</div>
+    	<% else %>
+      1<div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
+    	<%end%>
     </div>
+  </div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -63,7 +83,9 @@
         <% if current_user.present?%>
         var user_id = <%= current_user.id%>
         <%end%>
-        alert(c);
+         <% if !current_user.present?%>
+        alert("You need to Login");
+        <%end%>
         $.ajax({
         dataType: "script", 
         type: "GET",

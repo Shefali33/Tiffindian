@@ -85,7 +85,7 @@
         current_user.update_attributes(:master_subscriptions_id => 2)
       end
     end
-      redirect_to root_path
+      redirect_to supplier_index_path
   end
 
   def meals
