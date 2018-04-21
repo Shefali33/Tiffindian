@@ -24,5 +24,5 @@ resources :supplier
   post '/menu_create', to:'users#menu_create'
   resources :users
   resources :menus
-
+  resources :memberships
 end

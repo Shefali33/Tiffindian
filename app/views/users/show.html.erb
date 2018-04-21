@@ -33,7 +33,7 @@
             </div>	
     	</div>
     	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12">
-    		<div class="font-wt fpd font-size">SUBSCRIPTIONS
+    		<!-- <div class="font-wt fpd font-size">SUBSCRIPTIONS
     			<i class="fa fa-handshake-o"></i>
     		</div>
     		<div class="fpd txt-al">Memberships valid for 2 Months</div>
@@ -46,7 +46,8 @@
     			<%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%></div>
     		<% else %>
         <div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
-    		<%end%>
+    		<%end%> -->
+               <div> <%= render partial: 'memberships/form', locals: {membership: @membership}  %></div>
     	</div>
     </div>
 </div>

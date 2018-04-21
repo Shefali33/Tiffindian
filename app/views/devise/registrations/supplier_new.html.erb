@@ -106,6 +106,8 @@
   });
         $( "#name" ).rules( "add", {
     required: true,
+    maxlength: 20,
+    minlength: 4,
   messages: {
     required: "*Name is mandatory"
   }
@@ -124,6 +126,8 @@
   });
     $( "#contact_number" ).rules( "add", {
     required: true,
+     maxlength: 13,
+    minlength: 10,
   messages: {
     required: "*Contact number is mandatory"
   }

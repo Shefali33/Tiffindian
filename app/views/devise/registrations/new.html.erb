@@ -95,6 +95,9 @@ $( ".sign" ).validate({
   });
         $( "#name" ).rules( "add", {
     required: true,
+    maxlength: 20,
+    minlength: 4,
+     lettersonly: true,
   messages: {
     required: "*Name is mandatory"
   }
@@ -113,6 +116,8 @@ $( ".sign" ).validate({
   });
     $( "#contact_number" ).rules( "add", {
     required: true,
+    maxlength: 13,
+    minlength: 10,
   messages: {
     required: "*Contact number is mandatory"
   }

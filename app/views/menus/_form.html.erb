@@ -16,7 +16,7 @@
 				<%= menu_form.label :Category, class: "wei" %>
 			</div>
 			<div class=" col-lg-2 col-md-2 col-sm-2 col-xs-8">
-				<% options = options_from_collection_for_select(@category, 'id', 'category') %>
+				<% options = options_from_collection_for_select(@category, 'id', 'category', :selected => menu_form.object.master_category_id) %>
 				<%= menu_form.select :master_category_id, options,{
 				},:class=>"select-2-category",:include_blank => true  %>
 			</div>
@@ -24,7 +24,7 @@
 				<%= menu_form.label :Meal, class: "wei" %>
 			</div>
 			<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-8">
-				<% options = options_from_collection_for_select(@meal, 'id', 'meals_type') %>
+				<% options = options_from_collection_for_select(@meal, 'id', 'meals_type', :selected => menu_form.object.master_meal_id) %>
 				<%= menu_form.select :master_meal_id, options,{
 				},:class=>"select-2-category",:include_blank => true %>
 			</div>
@@ -32,7 +32,7 @@
 				<%= menu_form.label :Day, class: "wei" %>
 			</div>
 			<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-8">
-				<% options = options_from_collection_for_select(@day, 'id', 'days') %>
+				<% options = options_from_collection_for_select(@day, 'id', 'days', :selected => menu_form.object.master_day_id) %>
 				<%= menu_form.select :master_day_id, options,{
 				},:class=>"select-2-category",:include_blank => true %>
 			</div>
@@ -50,13 +50,13 @@
 				<%= menu_form.label :Price , class: "wei" %>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
-    			<%= menu_form.number_field :price, min: 35 , max:150, step: 5, value: 50 %>
+    			<%= menu_form.number_field :price, min: 35 , max:150, step: 5, placeholder: 35, required:true %>
    			</div>
     		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
   				<%= menu_form.label :Max_Quantity, class: "wei" %>
   			</div>
   			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
-				<%= menu_form.number_field :max_quantity, min:10 , max:50, step: 2, value: 20 %>
+				<%= menu_form.number_field :max_quantity, min:10 , max:50, step: 2, placeholder: 10,required:true %>
 			</div>
 		</div>
 		<br>
