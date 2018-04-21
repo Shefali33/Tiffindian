@@ -19,8 +19,8 @@
   # GET /users/1
   # GET /users/1.json
   def show
-     # @users = User.all
-     # @users = User.find(params[:id])
+     @users = User.all
+     @users = User.find(params[:id])
      if current_user.present?
     @subs = params[:subscription_id]
     current_user.update_attributes(:master_subscriptions_id => @subs)

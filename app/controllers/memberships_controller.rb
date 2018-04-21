@@ -25,7 +25,6 @@ class MembershipsController < ApplicationController
   # POST /memberships.json
   def create
     @subscription = MasterSubscription.all
-    byebug
     @membership = Membership.new(membership_params)
 
     respond_to do |format|
