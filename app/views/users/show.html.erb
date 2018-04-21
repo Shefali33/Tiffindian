@@ -53,16 +53,14 @@
       </div>
     </div> 
 		<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12">
-    	<div class="font-wt fpd font-size">SUBSCRIPTIONS
+    	<!-- <div class="font-wt fpd font-size">SUBSCRIPTIONS
     		<i class="fa fa-handshake-o"></i>
     	</div>
-<<<<<<< HEAD
     	<div class="fpd txt-al">Memberships valid for 2 Months</div>
     	<div class="fpd txt-al">Checking the box will allow user to buy Subscription<i class="fa fa-hand-o-down"></i></div>
     	<% if @user.master_subscriptions_id == 1%>
     		<div class="txt-al fdp" style="margin-top: 5px;">STANDARD
-=======
-    	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12">
+    	<div class=" col-lg-2 col-md-2 col-sm-3 col-xs-12"> -->
     		<!-- <div class="font-wt fpd font-size">SUBSCRIPTIONS
     			<i class="fa fa-handshake-o"></i>
     		</div>
@@ -85,10 +83,8 @@
     		<%end%> -->
                <div> <%= render partial: 'memberships/form', locals: {membership: @membership}  %></div>
     	</div>
->>>>>>> 0d87639520a3d8aff29c752e37800dd85bc84c11
     </div>
   </div>
-</div>
 <script type="text/javascript">
 	$(document).ready(function(){
   $('input').iCheck({
@@ -107,8 +103,8 @@
         <%end%>
         $.ajax({
         dataType: "script", 
-        type: "GET",
-        url: '/users/' + user_id +'',
+        type: "POST",
+        url: '/memberships/' + user_id +'',
         data: {subscription_id : c}
        });
     });

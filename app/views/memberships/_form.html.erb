@@ -14,7 +14,9 @@
         <% else %>
         <div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
         <%end%>
+        <% if current_user.present?%>
 <%= form.hidden_field :user_id , value: current_user.id %>
+<%end%>
 <%= form.hidden_field :start_date, value: '2018-04-19 12:27:55' %>
 <%= form.hidden_field :master_subscriptions_id, value: '2' %>
 <%= form.hidden_field :end_date, value: '2018-04-19 12:27:55' %>
@@ -22,7 +24,7 @@
 <%= form.hidden_field :quantity_provided, value: 'MasterSubscription.first.quantity_offered' %>
 <%= form.hidden_field :quantity_left, value: '3' %>
 
-  <div class="actions">
+  <!-- <div class="actions">
     <%= form.submit 'create' %>
-  </div>
+  </div> -->
 <% end %>
