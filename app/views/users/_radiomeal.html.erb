@@ -2,4 +2,11 @@
   <%= collection_radio_buttons(:menu, :master_meal_id, @meals, :id , :meals_type) do |biy|%>
   	<%= biy.label(:"data-value" => biy.value) { biy.radio_button(class:"radio_box radio_box2",disabled: biy.object.check_disabled(@disabled_meals)) + biy.text }%>
      <%end%>
-   </div>   
+   </div> 
+
+   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 iradio" style="text-align: center;">
+    
+   <%= collection_radio_buttons(:menu, :master_category_id, @category, :id , :category) do |b|%>
+    <% b.label(:"data-value" => b.value) { b.radio_button(class:"radio_box radio_box1",disabled: b.object.field_disab(@disabled_categories)) + b.text } %>
+    <%end%>
+  </div>  

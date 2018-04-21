@@ -73,20 +73,17 @@ ActiveRecord::Schema.define(version: 20180416062645) do
     t.datetime "updated_at", null: false
     t.integer "min_price"
     t.integer "max_price"
-    t.integer "quantity_offered"
   end
 
   create_table "memberships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id"
-    t.integer "supplier_id"
+    t.bigint "user_id"
     t.bigint "master_subscription_id"
-    t.date "start_date"
-    t.date "end_date"
-    t.integer "quantity_provided"
-    t.integer "quantity_left"
+    t.time "start_time"
+    t.time "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["master_subscription_id"], name: "index_memberships_on_master_subscription_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -9,7 +9,7 @@
 	<div class=" col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
 	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-top: 100px;">
 		<%= nested_form_for current_user, :url => menu_create_path, method: "POST", html: {multipart: true} do |f| %>
-		<div class="container-fluid pdng m">
+		><div class="container-fluid pdng m">
 		<%= f.fields_for :menus do |menu_form| %>
 		<div class="row mar pdng" style="padding-top: 100px!important;">
 			<div class=" col-lg-2 col-md-2 col-sm-2 col-xs-4">
@@ -26,8 +26,7 @@
 			<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-8">
 				<% options = options_from_collection_for_select(@meal, 'id', 'meals_type') %>
 				<%= menu_form.select :master_meal_id, options,{
-				},:class=>"select-2-category",:include_blank => true %>
-			</div>
+				},:class=>"select-2-category",:include_blank => true %>	</div>
 			<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-4">	
 				<%= menu_form.label :Day, class: "wei" %>
 			</div>
@@ -93,10 +92,13 @@
 	$(document).on('nested:fieldAdded', function(event){
   // this field was just inserted into your form
   var field = event.field; 
+  console.log(field);
   // it's a jQuery object already! Now you can find date input
   var selField = field.find('.select-2-category');
+ 
   // and activate datepicker on it
   selField.select2();
+  // chckField.iCheck();
 })
 
 // 	$(document).ready(function() {

@@ -19,8 +19,8 @@
   # GET /users/1
   # GET /users/1.json
   def show
-     @users = User.all
-     @users = User.find(params[:id])
+     # @users = User.all
+     # @users = User.find(params[:id])
      if current_user.present?
     @subs = params[:subscription_id]
     current_user.update_attributes(:master_subscriptions_id => @subs)
@@ -111,16 +111,6 @@
   end
   end
 
-def category
-      @category = MasterCategory.all
-      @disabled_categories = []
-
-       respond_to do |format|
-      format.js
-    end
-end
-
-
 def membership
   
 end
@@ -128,6 +118,7 @@ end
 
   def radiomeal
     @meals = MasterMeal.all
+    @category = MasterCategory.all
     d = params[:date]
     date = d.to_date 
     if date == Date.today
@@ -145,9 +136,11 @@ end
      # @meals << meal.all
     # end
       @disabled_meals = MasterMeal.where(id: 1)
+      @disabled_categories = []
      elsif time.between?(MasterSlot.find(2).start_time.seconds_since_midnight,MasterSlot.find(2).end_time.seconds_since_midnight)
     #    # flash[:notice] = "Post1111111 successfully created"
       @disabled_meals = MasterMeal.where(id: [1,2])
+      @disabled_categories = []
      elsif time.between?(MasterSlot.find(3).start_time.seconds_since_midnight,MasterSlot.find(3).end_time.seconds_since_midnight)
     #   # MasterMeal.where(master_meal_id: params[:meal_id])
     #debugger
@@ -160,6 +153,7 @@ end
      end
     else
       @disabled_meals = []
+      @disabled_categories = []
     end
    respond_to do |format|
    format.js
