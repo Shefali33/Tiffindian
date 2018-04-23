@@ -1,30 +1,30 @@
 <%= form_with( :url => memberships_path, local: true) do |form| %>
-
-        <div class="font-wt fpd font-size">SUBSCRIPTIONS
-          <i class="fa fa-handshake-o"></i>
-        </div>
-        <div class="fpd txt-al">Memberships valid for 2 Months</div>
-        <div class="fpd txt-al">Checking the box will allow user to buy Subscription<i class="fa fa-hand-o-down"></i></div>
-        <% if @user.master_subscriptions_id == 1%>
-          <div class="txt-al fdp" style="margin-top: 5px;">STANDARD
-          <%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "1","0")%></div>
-        <%elsif @user.master_subscriptions_id == 2%>
-          <div class="txt-al fdp" style="margin-top: 5px;">PREMIUM
-          <%= check_box("user", "master_subscriptions_id",{class: 'chck'}, "2","0")%></div>
-        <% else %>
-        <div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
-        <%end%>
-        <% if current_user.present?%>
-<%= form.hidden_field :user_id , value: current_user.id %>
+<% if current_user.present?%>
+  <%= form.hidden_field :user_id , value: current_user.id %>      
+  <%= form.hidden_field :start_date, value: Date.today %>
+  <%= form.hidden_field :master_subscription_id, value: @user.master_subscriptions_id %>
+  <%= form.hidden_field :end_date, value: Date.today + 2.months %>
+  <%= form.hidden_field :supplier_id, value: @user.id %>
+  <%= form.hidden_field :quantity_provided, value: 'MasterSubscription.first.quantity_offered' %>
+  <%= form.hidden_field :quantity_left, value: '3' %>
 <%end%>
-<%= form.hidden_field :start_date, value: '2018-04-19 12:27:55' %>
-<%= form.hidden_field :master_subscriptions_id, value: '2' %>
-<%= form.hidden_field :end_date, value: '2018-04-19 12:27:55' %>
-<%= form.hidden_field :supplier_id, value: '3' %>
-<%= form.hidden_field :quantity_provided, value: 'MasterSubscription.first.quantity_offered' %>
-<%= form.hidden_field :quantity_left, value: '3' %>
-
-  <!-- <div class="actions">
-    <%= form.submit 'create' %>
-  </div> -->
+<div class="font-wt fpd font-size cen">SUBSCRIPTIONS<i class="fa fa-handshake-o"></i>
+</div>
+<div class="fpd txt-al">Memberships valid for 2 Months</div>
+<div class="fpd txt-al">
+  Click the Button to buy the Subscription<i class="fa fa-hand-o-down"></i>
+</div>
+<% if @user.master_subscriptions_id == 1%>
+<!--   <div class="txt-al fdp" style="margin-top: 5px;">STANDARD</div> -->
+  <div class="actions">
+  <%= form.submit 'STANDARD', class: "member" %>
+</div>
+<%elsif @user.master_subscriptions_id == 2%>
+ <!--  <div class="txt-al fdp" style="margin-top: 5px;">PREMIUM</div> -->
+  <div class="actions">
+  <%= form.submit 'PREMIUM', class: "member" %>
+</div>
+<% else %>
+  <div class="txt-al1 fdp" style="margin-top: 5px;">No Subscription..</div>
+<%end%>
 <% end %>

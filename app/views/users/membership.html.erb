@@ -1,12 +1,82 @@
-<h1>Membership page</h1>
-  	<% if current_user.present?%>
-  			<% if !current_user.master_subscriptions_id.present? %>
-					<% if current_user.master_subscriptions_id == 1 %>
-							STANDARD
-					<%elsif current_user.master_subscriptions_id == 2%>
-    						PREMIUM
-    		<% else %>
-    			You don't have any membership
-  					<% end %>
-			<% end %>
-	<% end %>
+<div class="container mar pdng">
+  <div class="row pdng">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+      <div id="carousel-pager" class="carousel slide " data-ride="carousel" data-interval="3000">
+<!-- Carousel items -->
+        <div class="carousel-inner vertical">
+          <div class="active item">
+            <img src="/assets/c1r.png" class="img-responsive" data-target="#carousel-main" data-slide-to="0">
+          </div>
+          <div class="item">
+            <img src="/assets/c2r.png" class="img-responsive" data-target="#carousel-main" data-slide-to="1">
+          </div>
+          <div class="item">
+            <img src="/assets/c3r.png" class="img-responsive" data-target="#carousel-main" data-slide-to="2">
+          </div>
+        </div>
+<!-- Controls -->
+        <!--  <a class="left carousel-control" href="#carousel-pager" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-pager" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a> -->
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+      <% if current_user.present?%>
+        <% @users.each do |member|%>
+          <% if member.id == current_user.id%>
+            <div class="row">
+              <% member.memberships.each do |ms| %>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <%if ms.master_subscription_id.present?%>
+                    <div class="border well">
+                      <div class="name" ><%= ms.supplier.name%></div>
+                      <div class="subscription"><%= ms.master_subscription.subscription%></div>
+                      <div class="start-end">Start Date: <%= ms.start_date.strftime("%d/%m/%Y")%></div>
+                      <div class="start-end">End Date: <%= ms.end_date.strftime("%d/%m/%Y")%></div>
+                    </div>
+                  <%else%>
+                      <div style="color: black"> no membership....</div>
+                  <%end%>
+                </div>
+              <%end%>
+            </div>
+          <%end%>
+        <%end%>
+      <%end%>      
+    </div>
+  </div>
+</div>
+  
+
+
+  <!-- <div>  <% if current_user.master_subscriptions_id == 1 %>
+              STANDARD
+          <%elsif current_user.master_subscriptions_id == 2%>
+                PREMIUM
+        <% else %>
+          You don't have any membership
+            <% end %>
+    </div> -->
+    <script type="text/javascript">
+      $('.carousel .vertical .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=1;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+    </script>

@@ -19,6 +19,7 @@
   # GET /users/1
   # GET /users/1.json
   def show
+    
      @users = User.all
      @users = User.find(params[:id])
      if current_user.present?
@@ -115,7 +116,9 @@ end
   end
 
 def membership
-  
+  @users = User.all
+  # @users = User.find(params[:id])
+
 end
 
 

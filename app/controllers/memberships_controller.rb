@@ -24,14 +24,11 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
-    byebug
-    @subscription = MasterSubscription.all
- 
+   @subscription = MasterSubscription.all
     @membership = Membership.new(membership_params)
-
-    respond_to do |format|
+       respond_to do |format|
       if @membership.save
-        format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
+        format.html { redirect_to users_membership_path, notice: 'Membership was successfully created.' }
         format.json { render :show, status: :created, location: @membership }
       else
         format.html { render :new }
