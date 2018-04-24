@@ -1,0 +1,7 @@
+<h1>Orders page</h1>
+    <% if current_user.present?%>
+        <% if !current_user.orders.present? %>
+          <% else %>
+          You don't have any order
+        <% end %>
+    <% end %>

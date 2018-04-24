@@ -1,0 +1,21 @@
+<%= form_with(model: order, local: true) do |form| %>
+<% if current_user.present?%>
+  <%= form.hidden_field :user_id , value: current_user.id %>   
+  <%= form.hidden_field :supplier_id, value: @user.id %>
+  <%= form.hidden_field :oredered_date, value: Date.today %>
+  <%= form.hidden_field :delivery_date, value: Date.today %>
+  <%= form.hidden_field :delivery_time, value: Time.now %>
+  <%= form.hidden_field :quantity, value: 2 %>
+  <%= form.hidden_field :price, value: 50 %>
+  <%= form.hidden_field :rating, value: 5 %>
+  <%= form.hidden_field :menu_id, value: 5 %>
+  <%= form.hidden_field :master_slot_id, value: 5 %>
+  <%= form.hidden_field :master_order_status_id, value: 5 %>
+  <%= form.hidden_field :master_order_type, value: 5 %>
+
+
+<div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
