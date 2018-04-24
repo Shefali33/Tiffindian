@@ -55,6 +55,9 @@ font-family: 'Raleway', sans-serif !important;
   text-align: center;
   color: #000;
 }
+.border-rd{
+	border-radius: 100px;
+}
 
 .caption span.border {
   background-color: #111;
@@ -234,7 +237,7 @@ h3 {
 .dropdown-content {
     display: none;
     position: absolute;
-    /*background-color: #f1f1f1;*/
+    background-color: #795c55;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -539,7 +542,7 @@ opacity: .6;
   padding: 30px 40px 30px 40px;
 /*box-shadow: 3px 3px #B97;*/
   background: #D2B0A6;
-  /*background:white;*/
+  /*background: #ecd1d1;*/
 
 }
 .ic{
@@ -612,4 +615,133 @@ width: 88%;
 	text-align: center;
 	font-size: 13px;
 	color: red;
+}
+.member{
+
+  display: block;
+  position: relative;
+  text-align: center;
+  padding:2px;
+  margin-top: 10px;
+  margin: 0 auto;
+  background-color: white;
+  width:100px;
+  font-size: 10px;
+  line-height: 30px;
+  text-align: center;
+  color: black;
+  letter-spacing: 2px;
+  border: 1px solid black;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  text-transform: uppercase;	
+}
+.member:hover{
+	background-color: black !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.carousel-inner.vertical {
+  height: 100%; /*Note: set specific height here if not, there will be some issues with IE browser*/
+}
+.carousel-inner.vertical > .item {
+  -webkit-transition: .6s ease-in-out top;
+  -o-transition: .6s ease-in-out top;
+  transition: .6s ease-in-out top;
+}
+
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+  .carousel-inner.vertical > .item {
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    -o-transition: -o-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .carousel-inner.vertical > .item.next,
+  .carousel-inner.vertical > .item.active.right {
+    -webkit-transform: translate3d(0, 33.33%, 0);
+    transform: translate3d(0, 33.33%, 0);
+    top: 0;
+  }
+  .carousel-inner.vertical > .item.prev,
+  .carousel-inner.vertical > .item.active.left {
+    -webkit-transform: translate3d(0, -33.33%, 0);
+    transform: translate3d(0, -33.33%, 0);
+    top: 0;
+  }
+  .carousel-inner.vertical > .item.next.left,
+  .carousel-inner.vertical > .item.prev.right,
+  .carousel-inner.vertical > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: 0;
+  }
+}
+
+.carousel-inner.vertical > .active {
+  top: 0;
+}
+.carousel-inner.vertical > .next,
+.carousel-inner.vertical > .prev {
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+.carousel-inner.vertical > .next {
+  left: 0;
+  top: 33.33%;
+  right:0;
+}
+.carousel-inner.vertical > .prev {
+  left: 0;
+  top: -33.33%;
+  right:0;
+}
+.carousel-inner.vertical > .next.left,
+.carousel-inner.vertical > .prev.right {
+  top: 0;
+}
+.carousel-inner.vertical > .active.left {
+  left: 0;
+  top: -33.33%;
+  right:0;
+}
+.carousel-inner.vertical > .active.right {
+  left: 0;
+  top: 33.33%;
+  right:0;
+}
+
+#carousel-pager .carousel-control.left {
+    bottom: initial;
+    width: 100%;
+}
+#carousel-pager .carousel-control.right {
+    top: initial;
+    width: 100%;
+}
+.border{
+	/*border: 2px solid black;*/
+	margin-top: 30px;
+}
+.name{
+text-transform: uppercase;
+text-align: center;
+font-size: 20px;
+font-weight: bold;	
+}
+.subscription{
+	text-transform: uppercase;
+	padding: 10px 0 10px 20px;
+	font-size: 15px;
+}
+.start-end{
+	text-transform: uppercase;
+	padding: 10px 0 10px 20px;
+	font-size: 15px;
 }

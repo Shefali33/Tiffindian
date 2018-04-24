@@ -13,6 +13,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :menus, :allow_destroy => true
   has_many :master_meals, through: :menus
   has_many :master_categorys, through: :menus
+  has_many :master_subscriptions, through: :memberships
   has_many :memberships
   has_many :suppliers, through: :memberships
  # belongs_to :membership, :class_name => "Membership"

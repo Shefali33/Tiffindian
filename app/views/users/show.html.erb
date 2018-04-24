@@ -2,10 +2,10 @@
 <div class="container-fluid mar pdng">
 	<div class="row mar pdng">
 		<div class="col-lg-3 col-md-3 hidden-sm hidden-xs pdng">
-			<%= image_tag @users.image.url(:bg), class: "center-block img-responsive"  %>
+			<%= image_tag @user.image.url(:bg), class: "center-block img-responsive"  %>
 		</div>
 		<div class=" col-lg-7 col-md-7 col-sm-9 col-xs-12">
-			<h3 class="font-wt"><%= @users.name %></h3>
+			<h3 class="font-wt"><%= @user.name %></h3>
 			<%= @user.contact_no%><br>
 			<%= @user.email%>
 			<br>
@@ -84,13 +84,14 @@
     	</div>
     </div>
   </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
   $('input').iCheck({
     checkboxClass: 'icheckbox_flat',
     radioClass: 'iradio_flat'
     });
   // $('.chck').removeAttr('checked');
+
   // $('input').iCheck('uncheck');
   // $('.chck').on('ifToggled',function(){
   //       var c =  $(".chck:checked").val();
@@ -108,10 +109,30 @@
   //      });
   //   });
   // });
+
+  $('input').iCheck('uncheck');
+  $('.chck').on('ifToggled',function(){
+        var c =  $(".chck:checked").val();
+        <% if current_user.present?%>
+        var user_id = <%= current_user.id%>
+        <%end%>
+         <% if !current_user.present?%>
+        alert("You need to Login");
+        <%end%>
+        $.ajax({
+        dataType: "script", 
+        type: "GET",
+        url: '/users/' + user_id,
+        data: {subscription_id : c}
+
+       });
+    });
+  });
+
 	
 
        
-</script>		
+</script>		 -->
 	<!-- 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
