@@ -25,4 +25,5 @@ resources :supplier
   resources :users
   resources :menus
   resources :memberships
+  resources :orders
 end
