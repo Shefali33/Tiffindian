@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :master_categorys, through: :menus
   has_many :master_subscriptions, through: :memberships
   has_many :memberships
+  has_many :orders
+  has_many :suppliers, through: :orders
   has_many :suppliers, through: :memberships
  # belongs_to :membership, :class_name => "Membership"
  # belongs_to :membership, :class_name => "Membership"
