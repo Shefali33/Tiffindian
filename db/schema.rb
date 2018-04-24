@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416062645) do
+ActiveRecord::Schema.define(version: 20180424063207) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -103,6 +103,27 @@ ActiveRecord::Schema.define(version: 20180416062645) do
     t.index ["master_day_id"], name: "index_menus_on_master_day_id"
     t.index ["master_meal_id"], name: "index_menus_on_master_meal_id"
     t.index ["user_id"], name: "index_menus_on_user_id"
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "supplier_id"
+    t.date "oredered_date"
+    t.date "delivery_date"
+    t.time "delivery_time"
+    t.integer "quantity"
+    t.integer "price"
+    t.integer "rating"
+    t.bigint "menu_id"
+    t.bigint "master_slot_id"
+    t.bigint "master_order_status_id"
+    t.bigint "master_order_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["master_order_status_id"], name: "index_orders_on_master_order_status_id"
+    t.index ["master_order_type_id"], name: "index_orders_on_master_order_type_id"
+    t.index ["master_slot_id"], name: "index_orders_on_master_slot_id"
+    t.index ["menu_id"], name: "index_orders_on_menu_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
